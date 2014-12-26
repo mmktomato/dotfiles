@@ -17,4 +17,6 @@ case $OSTYPE in
 esac
 
 alias ec='emacsclient'
-alias rm='echo use /bin/rm instead of rm!'
+function rm() {
+    echo '!!! USE "/bin/rm" INSTEAD OF "rm" !!!'
+}
