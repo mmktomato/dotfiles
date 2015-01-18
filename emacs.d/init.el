@@ -135,6 +135,14 @@ and copy the css file to current directory."
           (lambda()
             (setq nxml-slash-auto-complete-flag t)))
 
+;;; twittering-mode
+(require 'twittering-mode)
+(setq twittering-use-master-password t) ; gpg コマンドが必要
+(setq twittering-private-info-file "~/.emacs.d/twittering-mode.gpg")
+(setq twittering-icon-mode t)
+(setq twittering-timer-interval 600)
+(setq twittering-number-of-tweets-on-retrieval 50)
+
 ;;; 一般
 ;; デフォルトのエンコード
 (let (coding)
@@ -202,7 +210,8 @@ and copy the css file to current directory."
 ;;; 左側に行数を表示
 (require 'linum)
 (global-linum-mode)
-;;(setq linum-format "%d ")
+(if my/nwp
+    (setq linum-format "%d "))
 
 ;; ビープ音をならなくするかわりに画面をフラッシュ
 (setq visible-bell t)
