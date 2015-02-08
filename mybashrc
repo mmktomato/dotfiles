@@ -1,6 +1,6 @@
 ## on .bashrc
-# if [ -f ~/mybashrc ] ; then
-# . ~/mybashrc
+# if [ -f ~/dotfiles/mybashrc ] ; then
+#   . ~/dotfiles/mybashrc
 # fi
 
 export PS1='\u@\h \w $ '
