@@ -7,3 +7,4 @@
 (package-install 'markdown-mode)
 (package-install 'csharp-mode)
 (package-install 'twittering-mode)
+(package-install 'dos)
