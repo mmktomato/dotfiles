@@ -6,6 +6,10 @@
 ;;; mylib.el をロード
 (require 'mylib)
 
+;;; exec-path
+(when (or my/linuxp my/macp)
+  (add-to-list 'exec-path "/usr/local/bin"))
+
 ;;; package
 (require 'package)
 (add-to-list 'package-archives '("melpa" . "http://melpa.milkbox.net/packages/"))
