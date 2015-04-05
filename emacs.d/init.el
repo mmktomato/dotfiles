@@ -285,17 +285,30 @@ and copy the css file to current directory."
 
 ;; フォント
 (unless my/nwp
-  (if (x-list-fonts "Ricty")
+  (if (file-exists-p "~/.emacs.d/lisp/myfont.el")
       (progn
-        ;; ascii
-        (set-face-attribute 'default nil
-                            :family "Ricty"
-                            :weight 'regular
-                            :height 135)
-        ;; japanese
-        (set-fontset-font   nil
-                            'japanese-jisx0208
-                            (font-spec :family "Ricty")))))
+        (load "~/.emacs.d/lisp/myfont.el")
+        (let* ((ascii-family-name "Verdana")
+               (japanese-family-name "VL Gothic")
+               (height 135))
+          (if (boundp 'my/font/ascii-family-name)
+              (setq ascii-family-name my/font/ascii-family-name))
+          (if (boundp 'my/font/japanese-family-name)
+              (setq japanese-family-name my/font/japanese-family-name))
+          (if (boundp 'my/font/height)
+              (setq height my/font/height))
+
+          ;; ascii
+          (if (x-list-fonts ascii-family-name)
+              (set-face-attribute 'default nil
+                                  :family ascii-family-name
+                                  :weight 'regular
+                                  :height height))
+          ;; japanese
+          (if (x-list-fonts japanese-family-name)
+              (set-fontset-font   nil
+                                  'japanese-jisx0208
+                                  (font-spec :family japanese-family-name)))))))
 
 ;; サーバー
 (unless my/nwp
