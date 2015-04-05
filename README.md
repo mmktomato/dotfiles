@@ -16,5 +16,5 @@ run following commands.
 ln -s dotfiles/inputrc .inputrc
 ln -s dotfiles/emacs.d .emacs.d
 emacs -Q --script dotfiles/emacs.d/install.el
-my dotfiles/emacs.d/lisp/myfont.sample.el dotfiles/emacs.d/lisp/myfont.el
+mv dotfiles/emacs.d/lisp/myfont.sample.el dotfiles/emacs.d/lisp/myfont.el
 ```
