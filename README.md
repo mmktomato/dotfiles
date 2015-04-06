@@ -2,7 +2,7 @@ my dotfiles.
 
 # INSTALL
 
-add following snippet to `~/.bashrc`.
+Add following snippet to `~/.bashrc`.
 
 ```bash:~/.bashrc
 if [ -f ~/dotfiles/mybashrc ] ; then
@@ -10,11 +10,13 @@ if [ -f ~/dotfiles/mybashrc ] ; then
 fi
 ```
 
-run following commands.
+Run following commands.
 
 ```bash
 ln -s dotfiles/inputrc .inputrc
 ln -s dotfiles/emacs.d .emacs.d
 emacs -Q --script dotfiles/emacs.d/install.el
-mv dotfiles/emacs.d/lisp/myfont.sample.el dotfiles/emacs.d/lisp/myfont.el
+cp dotfiles/emacs.d/lisp/myfont.sample.el dotfiles/emacs.d/lisp/myfont.el
 ```
+
+And adjust `dotfiles/emacs.d/lisp/myfont.el`. (This file is `.gitignore` d.)
