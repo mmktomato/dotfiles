@@ -36,3 +36,9 @@ Install `geeknote`.
 
 [geeknote](http://www.geeknote.me/)
 
+And run following commands.
+
+```bash
+geeknote login
+geeknote settings --editor emacsclient
+```
