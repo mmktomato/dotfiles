@@ -2,6 +2,8 @@ my dotfiles.
 
 # INSTALL
 
+## Bash
+
 Add following snippet to `~/.bashrc`.
 
 ```bash:~/.bashrc
@@ -14,15 +16,23 @@ Run following commands.
 
 ```bash
 ln -s dotfiles/inputrc .inputrc
+```
+
+## Emacs
+
+Run following commands.
+
+```bash
 ln -s dotfiles/emacs.d .emacs.d
 emacs -Q --script dotfiles/emacs.d/install.el
 cp dotfiles/emacs.d/lisp/myfont.sample.el dotfiles/emacs.d/lisp/myfont.el
 ```
 
-### geeknote
+And adjust `dotfiles/emacs.d/lisp/myfont.el`. (This file is `.gitignore` d.)
+
+## Geeknote
 
 Install `geeknote`.
 
-(geeknote)[http://www.geeknote.me/]
+[geeknote](http://www.geeknote.me/)
 
-And adjust `dotfiles/emacs.d/lisp/myfont.el`. (This file is `.gitignore` d.)
