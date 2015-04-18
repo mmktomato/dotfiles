@@ -147,6 +147,14 @@ and copy the css file to current directory."
 (setq twittering-timer-interval 600)
 (setq twittering-number-of-tweets-on-retrieval 50)
 
+;;; geeknote.el
+(global-set-key (kbd "C-c g c") 'geeknote-create)
+(global-set-key (kbd "C-c g e") 'geeknote-edit)
+(global-set-key (kbd "C-c g f") 'geeknote-find)
+(global-set-key (kbd "C-c g s") 'geeknote-show)
+(global-set-key (kbd "C-c g r") 'geeknote-remove)
+(global-set-key (kbd "C-c g m") 'geeknote-move)
+
 ;;; 一般
 ;; デフォルトのエンコード
 (let (coding)

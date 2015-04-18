@@ -19,4 +19,10 @@ emacs -Q --script dotfiles/emacs.d/install.el
 cp dotfiles/emacs.d/lisp/myfont.sample.el dotfiles/emacs.d/lisp/myfont.el
 ```
 
+### geeknote
+
+Install `geeknote`.
+
+(geeknote)[http://www.geeknote.me/]
+
 And adjust `dotfiles/emacs.d/lisp/myfont.el`. (This file is `.gitignore` d.)
