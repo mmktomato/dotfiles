@@ -6,9 +6,14 @@
 ;;; mylib.el をロード
 (require 'mylib)
 
-;;; exec-path
+;;; /usr/local/bin
 (when (or my/linuxp my/macp)
-  (add-to-list 'exec-path "/usr/local/bin"))
+  ;; exec-path
+  (unless (member "/usr/local/bin" exec-path)
+    (add-to-list 'exec-path "/usr/local/bin"))
+  ;; PATH
+  (unless (string-match "/usr/local/bin" (getenv "PATH"))
+    (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))))
 
 ;;; package
 (require 'package)
