@@ -160,6 +160,11 @@ and copy the css file to current directory."
 (global-set-key (kbd "C-c g r") 'geeknote-remove)
 (global-set-key (kbd "C-c g m") 'geeknote-move)
 
+;;; evil
+(setq evil-cross-lines t)
+(require 'evil)
+(evil-mode 1)
+
 ;;; 一般
 ;; デフォルトのエンコード
 (let (coding)
