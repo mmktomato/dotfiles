@@ -13,7 +13,7 @@
     (add-to-list 'exec-path "/usr/local/bin"))
   ;; PATH
   (unless (string-match "/usr/local/bin" (getenv "PATH"))
-    (setenv "PATH" (concat (getenv "PATH") ":/usr/local/bin"))))
+    (setenv "PATH" (concat "/usr/local/bin:" (getenv "PATH")))))
 
 ;;; package
 (require 'package)
