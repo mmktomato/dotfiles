@@ -9,4 +9,4 @@
 (package-install 'twittering-mode)
 (package-install 'dos)
 (package-install 'geeknote)
-(package-install 'evil)
+;; (package-install 'evil)
