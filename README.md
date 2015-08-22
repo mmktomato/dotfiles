@@ -12,10 +12,16 @@ if [ -f ~/dotfiles/mybashrc ] ; then
 fi
 ```
 
+Make sure that `~/.bash_profile` exists and it loads `~/.bashrc`.
+
 Run following commands.
 
 ```bash
+# in *nix
 ln -s dotfiles/inputrc .inputrc
+
+# in Windows (Git Bash)
+mklink "inputrc" dotfiles\inputrc
 ```
 
 ## Emacs
@@ -23,7 +29,14 @@ ln -s dotfiles/inputrc .inputrc
 Run following commands.
 
 ```bash
+# in *nix
 ln -s dotfiles/emacs.d .emacs.d
+
+# in Windows (Git Bash)
+mklink /D ".emacs.d" dotfiles\emacs.d
+```
+
+```bash
 emacs -Q --script dotfiles/emacs.d/install.el
 cp dotfiles/emacs.d/lisp/myfont.sample.el dotfiles/emacs.d/lisp/myfont.el
 ```
