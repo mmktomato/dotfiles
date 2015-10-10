@@ -172,7 +172,7 @@ and copy the css file to current directory."
    ((or my/linuxp my/macp)
     (setq coding 'utf-8-unix))
    (my/windowsp
-    (setq coding 'shift_jis-dos)))
+    (setq coding 'utf-8-dos)))
   (set-default-coding-systems coding))
 
 ;; GUI
