@@ -165,6 +165,19 @@ and copy the css file to current directory."
 ;; (require 'evil)
 ;; (evil-mode 1)
 
+;;; Emacs Mac Port 用
+(when my/macp
+  ;; ミニバッファで入力する際に日本語入力をOFFにする。
+  (when (fboundp 'mac-auto-ascii-mode)
+    (mac-auto-ascii-mode 1))
+  ;; カーソルの色を変える
+  (when (fboundp 'mac-input-source)
+    (add-hook 'mac-selected-keyboard-input-source-change-hook
+              (lambda()
+                (if (string-match "\\.Japanese" (mac-input-source))
+                    (set-cursor-color "hot pink")
+                  (set-cursor-color "white"))))))
+
 ;;; 一般
 ;; デフォルトのエンコード
 (let (coding)
