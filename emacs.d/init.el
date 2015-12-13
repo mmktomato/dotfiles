@@ -213,6 +213,9 @@ and copy the css file to current directory."
 ;; M-kanji を無視
 (global-set-key [M-kanji] 'ignore)
 
+;; M-` を無視
+(global-set-key "\M-`" 'ignore)
+
 ;; M-w を clipboard-kill-ring-save にする
 (global-set-key "\M-w" 'clipboard-kill-ring-save)
 
