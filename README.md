@@ -43,6 +43,18 @@ cp dotfiles/emacs.d/lisp/myfont.sample.el dotfiles/emacs.d/lisp/myfont.el
 
 And adjust `dotfiles/emacs.d/lisp/myfont.el`. (This file is `.gitignore` d.)
 
+# Vim
+
+Run following commands.
+
+```bash
+# in *nix
+mkdir -p .vim/bundle
+mkdir -p .vim/tmp
+git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
+ln -s dotfiles/vimrc .vimrc
+```
+
 ## Geeknote
 
 Install `geeknote`.
