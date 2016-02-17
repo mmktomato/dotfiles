@@ -53,6 +53,7 @@ mkdir -p .vim/bundle
 mkdir -p .vim/tmp
 git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 ln -s dotfiles/vimrc .vimrc
+ln -s dotfiles/gvimrc .gvimrc
 ```
 
 ## Geeknote
