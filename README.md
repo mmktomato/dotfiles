@@ -66,5 +66,5 @@ And run following commands.
 
 ```bash
 geeknote login
-geeknote settings --editor emacsclient
+geeknote settings --editor vim # or mvim, emacsclient, etc...
 ```

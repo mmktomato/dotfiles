@@ -12,6 +12,7 @@ call neobundle#begin(expand('~/.vim/bundle'))
 NeoBundleFetch 'Shougo/neobundle.vim'
  
 NeoBundle 'vim-scripts/Zenburn'
+NeoBundle 'neilagabriel/vim-geeknote'
  
 call neobundle#end()
  
@@ -20,6 +21,11 @@ filetype plugin indent on
 NeoBundleCheck
 """""""""""""""""""""""""""""
 
+""" vim-geeknote
+let g:GeeknoteFormat = "markdown"
+let g:GeeknoteScratchDirectory = $HOME . '/.vim/tmp'
+autocmd FileType geeknote setlocal nonumber
+"""""""""""""""""""""""""""""
 colorscheme zenburn
 set clipboard+=unnamed
 set number
