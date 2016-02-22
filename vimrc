@@ -26,6 +26,9 @@ let g:GeeknoteFormat = "markdown"
 let g:GeeknoteScratchDirectory = $HOME . '/.vim/tmp'
 autocmd FileType geeknote setlocal nonumber
 """""""""""""""""""""""""""""
+
+noremap j gj
+noremap k gk
 colorscheme zenburn
 set clipboard+=unnamed
 set number
