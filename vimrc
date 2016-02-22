@@ -29,6 +29,8 @@ autocmd FileType geeknote setlocal nonumber
 
 noremap j gj
 noremap k gk
+inoremap <silent> jj <ESC>
+inoremap <silent> っj <ESC>
 colorscheme zenburn
 set clipboard+=unnamed
 set number
