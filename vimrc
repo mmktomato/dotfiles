@@ -37,6 +37,7 @@ set number
 syntax on
 set wrapscan
 set laststatus=2
+set statusline=\ %f%m%r%h%w%=\ %Y\ %{&ff}\ %{&fenc}\ [%l/%L][%c][%02.2B]
 
 " swap file (.swp)
 set directory=~/.vim/tmp
