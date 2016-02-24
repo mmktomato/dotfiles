@@ -5,3 +5,6 @@
 !/emacs.d/lisp
 !/emacs.d/md_template.css
 /emacs.d/lisp/myfont.el
+
+# Vim
+/font.vim

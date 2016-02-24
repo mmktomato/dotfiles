@@ -54,7 +54,10 @@ mkdir -p .vim/tmp
 git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 ln -s dotfiles/vimrc .vimrc
 ln -s dotfiles/gvimrc .gvimrc
+cp dotfiles/font.sample.vim dotfiles/font.vim
 ```
+
+And adjust `dotfiles/font.vim`. (This file is `.gitignore` d.)
 
 ## Geeknote
 
