@@ -35,6 +35,7 @@ colorscheme zenburn
 set clipboard+=unnamed
 set number
 syntax on
+set ignorecase
 set wrapscan
 set laststatus=2
 set statusline=\ %f%m%r%h%w%=\ %Y\ %{&ff}\ %{&fenc}\ [%l/%L][%c][%02.2B]
