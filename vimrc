@@ -31,6 +31,7 @@ syntax on
 autocmd ColorScheme * highlight Search guibg=lightyellow guifg=blue
 colorscheme zenburn
 
+let mapleader="\<Space>"
 noremap j gj
 noremap k gk
 inoremap <silent> jj <ESC>
