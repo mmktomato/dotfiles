@@ -33,6 +33,7 @@ set list
 set listchars=tab:»\ ,eol:$,trail:_,extends:>,precedes:<
 autocmd ColorScheme * highlight SpecialKey guibg=NONE guifg=yellow
 autocmd ColorScheme * highlight Search guibg=lightyellow guifg=blue
+autocmd ColorScheme * highlight IncSearch guifg=darkmagenta
 colorscheme zenburn
 
 let mapleader="\<Space>"
@@ -45,6 +46,8 @@ set clipboard+=unnamed
 set number
 set ignorecase
 set wrapscan
+set hlsearch
+set incsearch
 set laststatus=2
 set statusline=\ %f%m%r%h%w%=\ %Y\ %{&ff}\ %{&fenc}\ [%l/%L][%c][%02.2B]
 
