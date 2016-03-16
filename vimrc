@@ -43,6 +43,7 @@ inoremap <silent> jj <ESC>
 inoremap <silent> っj <ESC>
 set clipboard+=unnamed
 
+set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=0 " same as tabstop
