@@ -13,6 +13,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'vim-scripts/Zenburn'
 NeoBundle 'neilagabriel/vim-geeknote'
+NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'fontsize'
 
 call neobundle#end()
