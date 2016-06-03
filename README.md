@@ -21,7 +21,7 @@ Run following commands.
 ln -s dotfiles/inputrc .inputrc
 
 # in Windows (Git Bash)
-mklink "inputrc" dotfiles\inputrc
+mklink ".inputrc" dotfiles\inputrc
 ```
 
 ## Emacs
@@ -69,5 +69,5 @@ And run following commands.
 
 ```bash
 geeknote login
-geeknote settings --editor vim # or mvim, emacsclient, etc...
+geeknote settings --editor vim # or mvim -f, emacsclient, etc...
 ```
