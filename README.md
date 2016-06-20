@@ -19,6 +19,7 @@ Run following commands.
 ```bash
 # in *nix
 ln -s dotfiles/inputrc .inputrc
+mkdir .mytrash
 
 # in Windows (Git Bash)
 mklink ".inputrc" dotfiles\inputrc

@@ -15,11 +15,14 @@ if [[ ${PATH} != *${HOME}/bin* ]]; then
 fi
 
 case $OSTYPE in
-    linux*)  alias ls='ls -F --color=auto';;
-    darwin*) alias ls='ls -FG';;
+    linux*)  alias ls='ls -F --color=auto'
+             alias mv='mv -i'
+             alias rm='\mv -f --backup=numbered --target-directory ~/.mytrash'
+             ;;
+    darwin*) alias ls='ls -FG'
+             alias mv='mv -i'
+             alias rm='\gmv -f --backup=numbered --target-directory ~/.mytrash'
+             ;;
 esac
 
 alias ec='emacsclient'
-function rm() {
-    echo '!!! USE "/bin/rm" INSTEAD OF "rm" !!!'
-}
