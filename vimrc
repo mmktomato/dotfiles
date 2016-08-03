@@ -36,6 +36,8 @@ autocmd ColorScheme * highlight Search guibg=lightyellow guifg=blue
 autocmd ColorScheme * highlight IncSearch guifg=darkmagenta
 colorscheme zenburn
 
+autocmd QuickFixCmdPost *grep* cwindow
+
 let mapleader="\<Space>"
 noremap j gj
 noremap k gk
