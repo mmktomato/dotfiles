@@ -43,7 +43,7 @@ noremap j gj
 noremap k gk
 inoremap <silent> jj <ESC>
 inoremap <silent> っj <ESC>
-set clipboard+=unnamed
+set clipboard=unnamedplus
 
 set expandtab
 set tabstop=4
