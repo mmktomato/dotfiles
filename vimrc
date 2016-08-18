@@ -43,7 +43,12 @@ noremap j gj
 noremap k gk
 inoremap <silent> jj <ESC>
 inoremap <silent> っj <ESC>
-set clipboard=unnamedplus
+
+if has('unix') && !has('mac')
+    set clipboard=unnamedplus
+else
+    set clipboard=unnamed
+endif
 
 set expandtab
 set tabstop=4
