@@ -1,3 +1,6 @@
+set encoding=utf-8
+scriptencoding utf-8
+
 """ NeoBundle
 if has('vim_starting')
   if &compatible
