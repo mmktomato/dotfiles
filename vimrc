@@ -17,6 +17,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 NeoBundle 'vim-scripts/Zenburn'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'thinca/vim-fontzoom'
+NeoBundle 'ctrlpvim/ctrlp.vim'
 
 call neobundle#end()
 
@@ -29,6 +30,12 @@ NeoBundleCheck
 let g:GeeknoteFormat = "markdown"
 let g:GeeknoteScratchDirectory = $HOME . '/.vim/tmp'
 autocmd FileType geeknote setlocal nonumber
+"""""""""""""""""""""""""""""
+
+""" ctrlp
+let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
+let g:ctrlp_clear_cache_on_exit = 1
+let g:ctrlp_lazy_update = 1
 """""""""""""""""""""""""""""
 
 syntax on
