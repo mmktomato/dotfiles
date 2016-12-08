@@ -36,6 +36,10 @@ autocmd FileType geeknote setlocal nonumber
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_lazy_update = 1
+let g:ctrlp_prompt_mappings = {
+    \ 'PrtBS()': ['<c-h>', '<bs>'],
+    \ 'PrtCurLeft()': ['<left>'],
+    \ }
 """""""""""""""""""""""""""""
 
 syntax on
