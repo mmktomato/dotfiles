@@ -40,6 +40,11 @@ let g:ctrlp_prompt_mappings = {
     \ 'PrtBS()': ['<c-h>', '<bs>'],
     \ 'PrtCurLeft()': ['<left>'],
     \ }
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/](\.(git|hg|svn)|__pycache__)$',
+    \ 'file': '\v\.(exe|so|dll)$',
+    \ 'link': 'some_bad_symbolic_links',
+    \ }
 """""""""""""""""""""""""""""
 
 syntax on
