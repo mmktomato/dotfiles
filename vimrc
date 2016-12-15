@@ -69,6 +69,10 @@ else
     set clipboard=unnamed
 endif
 
+if has('win32') && has('directx')
+    set renderoptions=type:directx
+endif
+
 set expandtab
 set tabstop=4
 set shiftwidth=4
