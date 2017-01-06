@@ -55,10 +55,6 @@ let g:Omnisharp_start_server = 0
 syntax on
 set list
 set listchars=tab:»\ ,eol:$,trail:_,extends:>,precedes:<
-autocmd ColorScheme * highlight SpecialKey guibg=NONE guifg=yellow
-autocmd ColorScheme * highlight Search guibg=lightyellow guifg=blue
-autocmd ColorScheme * highlight IncSearch guifg=darkmagenta
-colorscheme zenburn
 
 autocmd QuickFixCmdPost *grep* cwindow
 
