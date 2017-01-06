@@ -72,3 +72,17 @@ And run following commands.
 geeknote login
 geeknote settings --editor vim # or mvim -f, emacsclient, etc...
 ```
+
+## OmniSharp-Vim
+
+[omnisharp-vim](https://github.com/OmniSharp/omnisharp-vim)
+
+Run following commands.
+
+```bash
+cd .vim/bundle/omnisharp-vim
+git submodule update --init --recursive
+cd server
+xbuild
+```
+

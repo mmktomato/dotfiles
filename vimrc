@@ -18,7 +18,9 @@ NeoBundle 'vim-scripts/Zenburn'
 NeoBundle 'rust-lang/rust.vim'
 NeoBundle 'thinca/vim-fontzoom'
 NeoBundle 'ctrlpvim/ctrlp.vim'
-
+NeoBundle 'tpope/vim-dispatch'
+NeoBundle 'OmniSharp/omnisharp-vim'
+"
 call neobundle#end()
 
 filetype plugin indent on
@@ -47,6 +49,9 @@ let g:ctrlp_custom_ignore = {
     \ }
 """""""""""""""""""""""""""""
 
+""" OmniSharp
+let g:Omnisharp_start_server = 0
+"""""""""""""""""""""""""""""
 syntax on
 set list
 set listchars=tab:»\ ,eol:$,trail:_,extends:>,precedes:<
@@ -62,6 +67,8 @@ noremap j gj
 noremap k gk
 inoremap <silent> jj <ESC>
 inoremap <silent> っj <ESC>
+autocmd FileType cs nnoremap <leader>gd :OmniSharpGotoDefinition<cr>
+autocmd FileType cs nnoremap <leader>fu :OmniSharpFindUsages<cr>
 
 if has('unix') && !has('mac')
     set clipboard=unnamedplus
