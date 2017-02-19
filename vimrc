@@ -65,6 +65,8 @@ inoremap <silent> jj <ESC>
 inoremap <silent> っj <ESC>
 autocmd FileType cs nnoremap <leader>gd :OmniSharpGotoDefinition<cr>
 autocmd FileType cs nnoremap <leader>fu :OmniSharpFindUsages<cr>
+nnoremap qn :cnext<CR>
+nnoremap qp :cprevious<CR>
 
 if has('unix') && !has('mac')
     set clipboard=unnamedplus
