@@ -21,7 +21,7 @@ Run following commands.
 ln -s dotfiles/inputrc .inputrc
 mkdir .mytrash
 
-# in Windows (Git Bash)
+# in Windows
 mklink ".inputrc" dotfiles\inputrc
 ```
 
@@ -33,7 +33,7 @@ Run following commands.
 # in *nix
 ln -s dotfiles/emacs.d .emacs.d
 
-# in Windows (Git Bash)
+# in Windows
 mklink /D ".emacs.d" dotfiles\emacs.d
 ```
 
@@ -56,6 +56,14 @@ git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 ln -s dotfiles/vimrc .vimrc
 ln -s dotfiles/gvimrc .gvimrc
 cp dotfiles/font.sample.vim dotfiles/font.vim
+
+# in Windows
+mkdir .vim\bundle
+mkdir .vim\tmp
+git clone https://github.com/Shougo/neobundle.vim .vim\bundle\neobundle.vim
+mklink .vimrc dotfiles\vimrc
+mklink .gvimrc dotfiles\gvimrc
+copy dotfiles\font.sample.vim dotfiles\font.vim
 ```
 
 And adjust `dotfiles/font.vim`. (This file is `.gitignore` d.)
