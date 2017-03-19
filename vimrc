@@ -1,32 +1,13 @@
 set encoding=utf-8
 scriptencoding utf-8
 
-""" NeoBundle
 if has('vim_starting')
   if &compatible
     set nocompatible
   endif
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
 endif
 
-call neobundle#begin(expand('~/.vim/bundle'))
-
-" NeoBundleのバージョンをNeoBundle自身で管理する
-NeoBundleFetch 'Shougo/neobundle.vim'
-
-NeoBundle 'vim-scripts/Zenburn'
-NeoBundle 'rust-lang/rust.vim'
-NeoBundle 'thinca/vim-fontzoom'
-NeoBundle 'ctrlpvim/ctrlp.vim'
-NeoBundle 'tpope/vim-dispatch'
-NeoBundle 'OmniSharp/omnisharp-vim'
-"
-call neobundle#end()
-
 filetype plugin indent on
-
-NeoBundleCheck
-"""""""""""""""""""""""""""""
 
 """ vim-geeknote
 let g:GeeknoteFormat = "markdown"

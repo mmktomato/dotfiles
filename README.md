@@ -50,17 +50,15 @@ Run following commands.
 
 ```bash
 # in *nix
-mkdir -p .vim/bundle
+. dotfiles/vim-plugins.sh
 mkdir -p .vim/tmp
-git clone https://github.com/Shougo/neobundle.vim ~/.vim/bundle/neobundle.vim
 ln -s dotfiles/vimrc .vimrc
 ln -s dotfiles/gvimrc .gvimrc
 cp dotfiles/font.sample.vim dotfiles/font.vim
 
 # in Windows
-mkdir .vim\bundle
+dotfiles\vim-plugins.bat
 mkdir .vim\tmp
-git clone https://github.com/Shougo/neobundle.vim .vim\bundle\neobundle.vim
 mklink .vimrc dotfiles\vimrc
 mklink .gvimrc dotfiles\gvimrc
 copy dotfiles\font.sample.vim dotfiles\font.vim
