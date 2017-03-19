@@ -5,8 +5,8 @@ cd /d %~dp0
 cd ..
 
 set github=https://github.com
-set gui=.vim\pack\gui
-set cui=.vim\pack\cui
+set gui=vimfiles\pack\gui
+set cui=vimfiles\pack\cui
 
 mkdir %gui%\start
 mkdir %gui%\opt

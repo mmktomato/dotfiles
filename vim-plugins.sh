@@ -2,8 +2,8 @@
 
 function fetch_vim_plugins() {
     local github=https://github.com
-    local gui=~/.vim/pack/gui
-    local cui=~/.vim/pack/cui
+    local gui=~/vimfiles/pack/gui
+    local cui=~/vimfiles/pack/cui
 
     mkdir -p $gui/start
     mkdir -p $gui/opt

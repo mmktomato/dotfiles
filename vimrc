@@ -11,7 +11,7 @@ filetype plugin indent on
 
 """ vim-geeknote
 let g:GeeknoteFormat = "markdown"
-let g:GeeknoteScratchDirectory = $HOME . '/.vim/tmp'
+let g:GeeknoteScratchDirectory = $HOME . '/vimfiles/tmp'
 autocmd FileType geeknote setlocal nonumber
 """""""""""""""""""""""""""""
 
@@ -73,14 +73,14 @@ set laststatus=2
 set statusline=\ %f%m%r%h%w%=\ %Y\ %{&ff}\ %{&fenc}\ [%l/%L][%c][%02.2B]
 
 " swap file (.swp)
-set directory=~/.vim/tmp
+set directory=~/vimfiles/tmp
 
 " backup file (~)
-set backupdir=~/.vim/tmp
+set backupdir=~/vimfiles/tmp
 
 " viminfo file (.viminfo)
-set viminfo+=n~/.vim/tmp/viminfo.txt
+set viminfo+=n~/vimfiles/tmp/viminfo.txt
 
 " undo file (.un~)
-set undodir=~/.vim/tmp/
+set undodir=~/vimfiles/tmp/
 

@@ -51,14 +51,14 @@ Run following commands.
 ```bash
 # in *nix
 . dotfiles/vim-plugins.sh
-mkdir -p .vim/tmp
+mkdir -p vimfiles/tmp
 ln -s dotfiles/vimrc .vimrc
 ln -s dotfiles/gvimrc .gvimrc
 cp dotfiles/font.sample.vim dotfiles/font.vim
 
 # in Windows
 dotfiles\vim-plugins.bat
-mkdir .vim\tmp
+mkdir vimfiles\tmp
 mklink .vimrc dotfiles\vimrc
 mklink .gvimrc dotfiles\gvimrc
 copy dotfiles\font.sample.vim dotfiles\font.vim
