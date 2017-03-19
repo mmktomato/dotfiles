@@ -7,6 +7,7 @@ if has('vim_starting')
   endif
 endif
 
+set packpath^=~/vimfiles
 filetype plugin indent on
 
 """ vim-geeknote
