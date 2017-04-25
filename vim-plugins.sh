@@ -14,6 +14,7 @@ function fetch_vim_plugins() {
     git clone $github/thinca/vim-fontzoom.git $gui/start/vim-fontzoom
     git clone $github/ctrlpvim/ctrlp.vim.git $cui/start/ctrlp.vim
     git clone $github/junegunn/vim-easy-align.git $cui/start/vim-easy-align
+    git clone $github/PProvost/vim-ps1.git $cui/start/vim-ps1
 }
 fetch_vim_plugins
 
