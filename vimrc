@@ -31,9 +31,6 @@ let g:ctrlp_custom_ignore = {
     \ }
 """""""""""""""""""""""""""""
 
-""" OmniSharp
-let g:Omnisharp_start_server = 0
-"""""""""""""""""""""""""""""
 syntax on
 set list
 set listchars=tab:»\ ,eol:$,trail:_,extends:>,precedes:<
@@ -45,8 +42,6 @@ noremap j gj
 noremap k gk
 inoremap <silent> jj <ESC>
 inoremap <silent> っj <ESC>
-autocmd FileType cs nnoremap <leader>gd :OmniSharpGotoDefinition<cr>
-autocmd FileType cs nnoremap <leader>fu :OmniSharpFindUsages<cr>
 nnoremap qn :cnext<CR>
 nnoremap qp :cprevious<CR>
 
