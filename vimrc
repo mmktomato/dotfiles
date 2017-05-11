@@ -65,6 +65,9 @@ augroup fileTypeIndent
     autocmd FileType markdown setlocal tabstop=2 shiftwidth=2 softtabstop=0
 augroup END
 
+set foldmethod=indent
+set foldcolumn=2
+
 set number
 set ignorecase
 set wrapscan
