@@ -65,6 +65,15 @@ augroup fileTypeIndent
     autocmd FileType markdown setlocal tabstop=2 shiftwidth=2 softtabstop=0
 augroup END
 
+function MyFoldText()
+    let linecount = v:foldend - v:foldstart + 1
+    "let level = ''
+    "for i in v:foldlevel
+    "    let level . v:folddashes
+    "endfor
+    return '====  ' . linecount . ' lines  '
+endfunction
+set foldtext=MyFoldText()
 set foldmethod=indent
 set foldcolumn=2
 
