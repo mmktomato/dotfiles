@@ -60,6 +60,11 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=0 " same as tabstop
 
+augroup fileTypeIndent
+    autocmd!
+    autocmd FileType markdown setlocal tabstop=2 shiftwidth=2 softtabstop=0
+augroup END
+
 set number
 set ignorecase
 set wrapscan
