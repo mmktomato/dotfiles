@@ -67,11 +67,8 @@ augroup END
 
 function MyFoldText()
     let linecount = v:foldend - v:foldstart + 1
-    "let level = ''
-    "for i in v:foldlevel
-    "    let level . v:folddashes
-    "endfor
-    return '====  ' . linecount . ' lines  '
+    let indent = repeat(' ', v:foldlevel * &shiftwidth)
+    return indent . '\__  (' . linecount . ' lines)  '
 endfunction
 set foldtext=MyFoldText()
 set foldmethod=indent
