@@ -2,9 +2,9 @@ set encoding=utf-8
 scriptencoding utf-8
 
 if has('vim_starting')
-  if &compatible
-    set nocompatible
-  endif
+    if &compatible
+        set nocompatible
+    endif
 endif
 
 set packpath^=~/vimfiles
@@ -62,7 +62,7 @@ set softtabstop=0 " same as tabstop
 
 augroup fileTypeIndent
     autocmd!
-    autocmd FileType markdown setlocal tabstop=2 shiftwidth=2 softtabstop=0
+    autocmd FileType markdown,xml setlocal tabstop=2 shiftwidth=2 softtabstop=0
 augroup END
 
 function MyFoldText()
