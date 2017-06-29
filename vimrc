@@ -67,7 +67,7 @@ augroup END
 
 function MyFoldText()
     let linecount = v:foldend - v:foldstart + 1
-    let indent = repeat(' ', v:foldlevel * &shiftwidth)
+    let indent = repeat(' ', v:foldlevel * shiftwidth())
     return indent . '\__  (' . linecount . ' lines)  '
 endfunction
 set foldtext=MyFoldText()
