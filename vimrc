@@ -62,7 +62,7 @@ set softtabstop=0 " same as tabstop
 
 augroup fileTypeIndent
     autocmd!
-    autocmd FileType markdown,xml setlocal tabstop=2 shiftwidth=2 softtabstop=0
+    autocmd FileType markdown,xml,ruby,eruby setlocal tabstop=2 shiftwidth=2 softtabstop=0
 augroup END
 
 function MyFoldText()
