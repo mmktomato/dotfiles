@@ -46,6 +46,7 @@ nnoremap qn :cnext<CR>
 nnoremap qp :cprevious<CR>
 nnoremap <Leader>n :cnext<CR>
 nnoremap <Leader>p :cprevious<CR>
+nnoremap <Leader><Leader> za
 
 if has('unix') && !has('mac')
     set clipboard=unnamedplus
