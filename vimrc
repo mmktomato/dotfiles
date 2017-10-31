@@ -44,6 +44,8 @@ inoremap <silent> jj <ESC>
 inoremap <silent> っj <ESC>
 nnoremap qn :cnext<CR>
 nnoremap qp :cprevious<CR>
+nnoremap <Leader>n :cnext<CR>
+nnoremap <Leader>p :cprevious<CR>
 
 if has('unix') && !has('mac')
     set clipboard=unnamedplus
