@@ -34,6 +34,7 @@ let g:ctrlp_custom_ignore = {
 syntax on
 set list
 set listchars=tab:»\ ,eol:$,trail:_,extends:>,precedes:<
+set backspace=indent,eol,start
 
 autocmd QuickFixCmdPost *grep* cwindow
 
