@@ -33,7 +33,8 @@ let g:ctrlp_custom_ignore = {
 
 syntax on
 set list
-set listchars=tab:»\ ,eol:$,trail:_,extends:>,precedes:<
+"set listchars=tab:»\ ,eol:$,trail:_,extends:>,precedes:<
+set listchars=tab:»\ ,trail:_,extends:>,precedes:<
 set backspace=indent,eol,start
 
 autocmd QuickFixCmdPost *grep* cwindow
@@ -77,6 +78,14 @@ endfunction
 set foldtext=MyFoldText()
 set foldmethod=indent
 set foldcolumn=2
+
+set nocursorline
+highlight CursorLine term=None cterm=None ctermbg=236
+highlight CursorLineNr term=bold ctermfg=227
+augroup cursorLine
+    autocmd!
+    autocmd InsertEnter,InsertLeave * set cursorline!
+augroup END
 
 set number
 set ignorecase
