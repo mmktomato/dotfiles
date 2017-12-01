@@ -31,6 +31,10 @@ let g:ctrlp_custom_ignore = {
     \ }
 """""""""""""""""""""""""""""
 
+""" previm
+let g:previm_open_cmd = 'open -a firefox' " TODO: linux and windows.
+"""""""""""""""""""""""""""""
+
 syntax on
 set list
 "set listchars=tab:»\ ,eol:$,trail:_,extends:>,precedes:<
