@@ -25,6 +25,12 @@ mkdir .mytrash
 mklink ".inputrc" dotfiles\inputrc
 ```
 
+If you use macOS, run following commands.
+
+```bash
+brew install coreutils
+```
+
 ## Emacs
 
 Run following commands.
