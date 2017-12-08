@@ -31,6 +31,16 @@ If you use macOS, run following commands.
 brew install coreutils
 ```
 
+## git-completion
+
+Run following commands.
+
+```bash
+mkdir -p ~/git-completion
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/git-completion/git-completion.bash
+curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh > ~/git-completion/git-prompt.sh
+```
+
 ## Emacs
 
 Run following commands.

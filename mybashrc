@@ -3,7 +3,6 @@
 #   . ~/dotfiles/mybashrc
 # fi
 
-export PS1='\u@\h \w $ '
 export LANG=ja_JP.UTF-8
 export LC_CTYPE=ja_JP.UTF-8
 export LSCOLORS='gxfxcxdxbxegedabagacad'
@@ -27,3 +26,21 @@ case $OSTYPE in
 esac
 
 alias ec='emacsclient'
+
+# git-completion
+if [ -f ~/git-completion/git-completion.bash ] ; then
+    . ~/git-completion/git-completion.bash
+fi
+
+# git-prompt
+if [ -f ~/git-completion/git-prompt.sh ] ; then
+    . ~/git-completion/git-prompt.sh
+
+    GIT_PS1_SHOWSTASHSTATE=true
+    GIT_PS1_SHOWCOLORHINTS=true
+
+    #export PS1='\u@\h \w\[\033[1;31m\]$(__git_ps1)\[\033[00m\] $ '
+    PROMPT_COMMAND="__git_ps1 '\u@\h \w' ' \\\$ '"
+else
+    export PS1='\u@\h \w $ '
+fi
