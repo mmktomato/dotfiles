@@ -11,9 +11,9 @@ set packpath^=~/vimfiles
 filetype plugin indent on
 
 """ vim-geeknote
-let g:GeeknoteFormat = "markdown"
-let g:GeeknoteScratchDirectory = $HOME . '/vimfiles/tmp'
-autocmd FileType geeknote setlocal nonumber
+"let g:GeeknoteFormat = "markdown"
+"let g:GeeknoteScratchDirectory = $HOME . '/vimfiles/tmp'
+"autocmd FileType geeknote setlocal nonumber
 """""""""""""""""""""""""""""
 
 """ ctrlp
@@ -41,7 +41,10 @@ set list
 set listchars=tab:»\ ,trail:_,extends:>,precedes:<
 set backspace=indent,eol,start
 
-autocmd QuickFixCmdPost *grep* cwindow
+augroup quickFix
+    autocmd!
+    autocmd QuickFixCmdPost *grep* cwindow
+augroup END
 
 let mapleader="\<Space>"
 noremap j gj

@@ -82,16 +82,3 @@ copy dotfiles\font.sample.vim dotfiles\font.vim
 
 And adjust `dotfiles/font.vim`. (This file is `.gitignore` d.)
 
-## Geeknote
-
-Install `geeknote`.
-
-[geeknote](http://www.geeknote.me/)
-
-And run following commands.
-
-```bash
-geeknote login
-geeknote settings --editor vim # or mvim -f, emacsclient, etc...
-```
-
