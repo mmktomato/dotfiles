@@ -14,18 +14,18 @@ fi
 
 case $OSTYPE in
     linux*)  alias ls='ls -F --color=auto'
-             alias mv='mv -i'
              alias rm='\mv -f --backup=numbered --target-directory ~/.mytrash'
-             alias grep='grep --color=auto'
              ;;
     darwin*) alias ls='ls -FG'
-             alias mv='mv -i'
              alias rm='\gmv -f --backup=numbered --target-directory ~/.mytrash'
-             alias grep='grep --color=auto'
              ;;
 esac
 
 alias ec='emacsclient'
+alias gs='git status'
+alias gd='git diff'
+alias mv='mv -i'
+alias grep='grep --color=auto'
 
 # git-completion
 if [ -f ~/git-completion/git-completion.bash ] ; then
