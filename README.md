@@ -1,84 +1,54 @@
 my dotfiles.
 
+**NOTE: If you use Windows, use WSL.**
+
 # INSTALL
+
+Clone this repository to home directory.
+
+```bash
+cd ~
+git clone https://github.com/mmktomato/dotfiles.git
+```
 
 ## Bash
 
-Add following snippet to `~/.bashrc`.
+Add following snippet to `~/.bashrc`. Make sure that `~/.bash_profile` exists and it loads `~/.bashrc`.
 
 ```bash:~/.bashrc
-if [ -f ~/dotfiles/mybashrc ] ; then
-  . ~/dotfiles/mybashrc
+if [ -f ~/dotfiles/bashrc ] ; then
+  . ~/dotfiles/bashrc
 fi
 ```
 
-Make sure that `~/.bash_profile` exists and it loads `~/.bashrc`.
-
-Run following commands.
-
-```bash
-# in *nix
-ln -s dotfiles/inputrc .inputrc
-mkdir .mytrash
-
-# in Windows
-mklink ".inputrc" dotfiles\inputrc
-```
-
-If you use macOS, run following commands.
+If you use macOS, install `coreutils` via Homebrew.
 
 ```bash
 brew install coreutils
 ```
 
-## git-completion
-
-Run following commands.
+Run bootstrap script.
 
 ```bash
-mkdir -p ~/git-completion
-curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ~/git-completion/git-completion.bash
-curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-prompt.sh > ~/git-completion/git-prompt.sh
+. bootstrapper/bash.sh
 ```
+
+## Vim
+
+Run bootstrap script.
+
+```bash
+. bootstrapper/vim.sh
+```
+
+And edit `dotfiles/font.vim`. (This file is `.gitignore` d.)
 
 ## Emacs
 
-Run following commands.
+Run bootstrap script.
 
 ```bash
-# in *nix
-ln -s dotfiles/emacs.d .emacs.d
-
-# in Windows
-mklink /D ".emacs.d" dotfiles\emacs.d
+. bootstrapper/emacs.sh
 ```
 
-```bash
-emacs -Q --script dotfiles/emacs.d/install.el
-cp dotfiles/emacs.d/lisp/myfont.sample.el dotfiles/emacs.d/lisp/myfont.el
-```
-
-And adjust `dotfiles/emacs.d/lisp/myfont.el`. (This file is `.gitignore` d.)
-
-# Vim
-
-Run following commands.
-
-```bash
-# in *nix
-. dotfiles/vim-plugins.sh
-mkdir -p vimfiles/tmp
-ln -s dotfiles/vimrc .vimrc
-ln -s dotfiles/gvimrc .gvimrc
-cp dotfiles/font.sample.vim dotfiles/font.vim
-
-# in Windows
-dotfiles\vim-plugins.bat
-mkdir vimfiles\tmp
-mklink .vimrc dotfiles\vimrc
-mklink .gvimrc dotfiles\gvimrc
-copy dotfiles\font.sample.vim dotfiles\font.vim
-```
-
-And adjust `dotfiles/font.vim`. (This file is `.gitignore` d.)
-
+And edit `dotfiles/emacs.d/lisp/myfont.el`. (This file is `.gitignore` d.)
