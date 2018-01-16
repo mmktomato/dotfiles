@@ -1,12 +1,3 @@
-augroup colorScheme
-    autocmd!
-    autocmd ColorScheme * highlight SpecialKey guibg=NONE guifg=yellow
-    autocmd ColorScheme * highlight Search guibg=lightyellow guifg=blue
-    autocmd ColorScheme * highlight IncSearch guifg=darkmagenta
-augroup END
-
-colorscheme zenburn
-
 set guioptions-=m
 set guioptions-=T
 

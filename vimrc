@@ -85,14 +85,33 @@ endfunction
 set foldtext=MyFoldText()
 set foldmethod=indent
 set foldcolumn=2
-
 set nocursorline
-highlight CursorLine term=None cterm=None ctermbg=236
-highlight CursorLineNr term=bold ctermfg=227
-augroup cursorLine
+
+augroup colorScheme
     autocmd!
+    autocmd ColorScheme * highlight SpecialKey
+        \ cterm=bold
+        \ ctermfg=227
+        \ guifg=yellow
+        \ ctermbg=NONE
+        \ guibg=NONE
+    autocmd ColorScheme * highlight Search
+        \ ctermfg=21
+        \ guifg=blue
+        \ ctermbg=230
+        \ guibg=lightyellow
+    autocmd ColorScheme * highlight IncSearch
+        \ ctermfg=127
+        \ guifg=darkmagenta
+    "autocmd ColorScheme * highlight CursorLine
+    "    \ cterm=None
+    "    \ ctermbg=236
+    "autocmd ColorScheme * highlight CursorLineNr
+    "    \ term=bold
+    "    \ ctermfg=227
     autocmd InsertEnter,InsertLeave * set cursorline!
 augroup END
+colorscheme zenburn
 
 set number
 set ignorecase
