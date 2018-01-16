@@ -102,6 +102,13 @@ set incsearch
 set laststatus=2
 set statusline=\ %f%m%r%h%w%=\ %Y\ %{&ff}\ %{&fenc}\ [%l/%L][%c][%02.2B]
 
+if has('mac') && executable('swim')
+    augroup insertLeave
+        autocmd!
+        autocmd InsertLeave * :call system('swim use com.apple.keyboardlayout.all')
+    augroup END
+endif
+
 " swap file (.swp)
 set directory=~/vimfiles/tmp
 

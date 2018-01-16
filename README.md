@@ -43,6 +43,8 @@ Run bootstrap script.
 
 And edit `dotfiles/font.vim`. (This file is `.gitignore` d.)
 
+If you use macOS, install [swim](https://github.com/mitsuse/swim)
+
 ## Emacs
 
 Run bootstrap script.
