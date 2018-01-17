@@ -41,9 +41,10 @@ Run bootstrap script.
 . bootstrapper/vim.sh
 ```
 
-And edit `dotfiles/font.vim`. (This file is `.gitignore` d.)
+Edit `dotfiles/font.vim`. (This file is `.gitignore` d.)
 
-If you use macOS, install [swim](https://github.com/mitsuse/swim)
+If you use macOS, install [swim](https://github.com/mitsuse/swim) and link it to `~/bin`. (This directory is included in $PATH. Start bash again if necessary.)
+Make sure that `ABC`(`com.apple.keyboardlayout.all`) exists as input source.
 
 ## Emacs
 
@@ -53,4 +54,4 @@ Run bootstrap script.
 . bootstrapper/emacs.sh
 ```
 
-And edit `dotfiles/emacs.d/lisp/myfont.el`. (This file is `.gitignore` d.)
+Edit `dotfiles/emacs.d/lisp/myfont.el`. (This file is `.gitignore` d.)
