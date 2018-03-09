@@ -1,4 +1,4 @@
-#/bin/sh
+#!/bin/sh
 
 function fetch_vim_plugins() {
     local github=https://github.com
