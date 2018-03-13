@@ -77,7 +77,7 @@ augroup fileTypeIndent
     autocmd FileType xml,ruby,eruby setlocal tabstop=2 shiftwidth=2 softtabstop=0
 augroup END
 
-function MyFoldText()
+function! MyFoldText()
     let linecount = v:foldend - v:foldstart + 1
     let indent = repeat(' ', v:foldlevel * shiftwidth())
     return indent . '\__  (' . linecount . ' lines)  '
