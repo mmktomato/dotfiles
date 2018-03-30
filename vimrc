@@ -131,6 +131,13 @@ if has('mac') && executable('swim')
     augroup END
 endif
 
+:packadd! vim-submode
+let g:submode_timeoutlen = 3000
+call submode#enter_with('movetab', 'n', '', 'gt', 'gt')
+call submode#enter_with('movetab', 'n', '', 'gT', 'gT')
+call submode#map('movetab', 'n', '', 't', 'gt')
+call submode#map('movetab', 'n', '', 'T', 'gT')
+
 " swap file (.swp)
 set directory=~/vimfiles/tmp
 
