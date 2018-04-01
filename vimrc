@@ -10,6 +10,10 @@ endif
 set packpath^=~/vimfiles
 filetype plugin indent on
 
+function! s:isWsl()
+    return filereadable('/proc/sys/fs/binfmt_misc/WSLInterop')
+endfunction
+
 """ vim-geeknote
 "let g:GeeknoteFormat = "markdown"
 "let g:GeeknoteScratchDirectory = $HOME . '/vimfiles/tmp'
@@ -130,6 +134,15 @@ if has('mac') && executable('swim')
     augroup insertLeave
         autocmd!
         autocmd InsertLeave * :call system('swim use com.apple.keyboardlayout.all')
+    augroup END
+elseif s:isWsl() && executable('AutoHotkeyU64.exe')
+    augroup insertLeave
+        autocmd!
+        " TODO:
+        "   Replace 'AutoHotkeyU64.exe "C:\tool\ImDisable.ahk"' to
+        "   'AutoHotkeyU64.exe `wslpath -m "~/dotfiles/ImDisable.ahk"`'
+        "   if `wslpath` command is available.
+        autocmd InsertLeave * :call system('AutoHotkeyU64.exe "C:\tool\ImDisable.ahk"')
     augroup END
 endif
 
