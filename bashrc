@@ -9,7 +9,7 @@ export LSCOLORS='gxfxcxdxbxegedabagacad'
 export LS_COLORS='rs=0:di=01;34:ln=01;36:mh=00:pi=40;33:so=01;35:do=01;35:bd=40;33;01:cd=40;33;01:or=40;31;01:su=37;41:sg=30;43:ca=30;41:tw=30;42:ow=34;42:st=37;44:ex=01;32'
 
 if [[ ${PATH} != *${HOME}/bin* ]]; then
-    export PATH=${PATH}:${HOME}/bin
+    export PATH=${HOME}/bin:${PATH}
 fi
 
 case $OSTYPE in
@@ -44,3 +44,20 @@ if [ -f ~/git-completion/git-prompt.sh ] ; then
 else
     export PS1='\u@\h \w $ '
 fi
+
+# ndenv
+if [ -d ${HOME}/.ndenv/bin ]; then
+    if [[ ${PATH} != *${HOME}/.ndenv/bin* ]]; then
+        export PATH=${HOME}/.ndenv/bin:${PATH}
+    fi
+    eval "$(ndenv init -)"
+fi
+
+# rbenv
+if [ -d ${HOME}/.rbenv/bin ]; then
+    if [[ ${PATH} != *${HOME}/.rbenv/bin* ]]; then
+        export PATH=${HOME}/.rbenv/bin:${PATH}
+    fi
+    eval "$(rbenv init -)"
+fi
+
