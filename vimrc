@@ -153,6 +153,31 @@ call submode#enter_with('movetab', 'n', '', 'gT', 'gT')
 call submode#map('movetab', 'n', '', 't', 'gt')
 call submode#map('movetab', 'n', '', 'T', 'gT')
 
+" TypeScript
+if executable('typescript-language-server')
+    augroup lsp_setup
+        autocmd!
+        autocmd User lsp_setup call lsp#register_server({
+            \ 'name': 'typescript-language-server',
+            \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+            \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
+            \ 'whitelist': ['typescript'],
+            \ })
+    augroup END
+endif
+let g:lsp_async_completion = 1
+"let g:lsp_log_verbose = 1
+"let g:lsp_log_file = expand('~/vim-lsp.log')
+augroup Typescript
+    autocmd!
+    autocmd FileType typescript setlocal omnifunc=lsp#complete
+    autocmd CompleteDone * if pumvisible() == 0 | pclose | endif
+augroup END
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+"imap <c-space> <Plug>(asyncomplete_force_refresh)
+
 " swap file (.swp)
 set directory=~/vimfiles/tmp
 

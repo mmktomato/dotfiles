@@ -18,6 +18,10 @@ function fetch_vim_plugins() {
     git clone $github/kannokanno/previm.git $cui/start/previm
     git clone $github/kana/vim-submode.git $cui/start/vim-submode
     git clone $github/leafgarland/typescript-vim $cui/start/typescript-vim
+    git clone $github/prabirshrestha/async.vim $cui/start/async.vim
+    git clone $github/prabirshrestha/vim-lsp $cui/start/vim-lsp
+    git clone $github/prabirshrestha/asyncomplete.vim $cui/start/asyncomplete.vim
+    git clone $github/prabirshrestha/asyncomplete-lsp.vim $cui/start/asyncomplete-lsp.vim
 }
 fetch_vim_plugins
 
