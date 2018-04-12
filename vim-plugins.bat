@@ -1,3 +1,11 @@
+REM *********************************************
+REM *                                           *
+REM *         !!!!! DEPRECATED !!!!!            *
+REM *                                           *
+REM *           USE WSL in WINDOWS              *
+REM *                                           *
+REM *********************************************
+
 @echo off
 setlocal
 
