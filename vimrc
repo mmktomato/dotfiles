@@ -161,13 +161,14 @@ if executable('typescript-language-server')
             \ 'name': 'typescript-language-server',
             \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
             \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
-            \ 'whitelist': ['typescript'],
+            \ 'whitelist': ['typescript', 'typescript.jsx'],
             \ })
     augroup END
 endif
 let g:lsp_async_completion = 1
 "let g:lsp_log_verbose = 1
 "let g:lsp_log_file = expand('~/vim-lsp.log')
+let g:asyncomplete_auto_popup = 0
 augroup Typescript
     autocmd!
     autocmd FileType typescript setlocal omnifunc=lsp#complete
@@ -188,7 +189,7 @@ augroup END
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
-"imap <c-space> <Plug>(asyncomplete_force_refresh)
+imap <C-space> <Plug>(asyncomplete_force_refresh)
 
 " swap file (.swp)
 set directory=~/vimfiles/tmp
