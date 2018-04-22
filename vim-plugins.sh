@@ -33,6 +33,7 @@ function fetch_vim_plugins() {
     git_clone $github/prabirshrestha/vim-lsp $cui/start/vim-lsp
     git_clone $github/prabirshrestha/asyncomplete.vim $cui/start/asyncomplete.vim
     git_clone $github/prabirshrestha/asyncomplete-lsp.vim $cui/start/asyncomplete-lsp.vim
+    git_clone $github/peitalin/vim-jsx-typescript $cui/start/vim-jsx-typescript
 }
 fetch_vim_plugins
 

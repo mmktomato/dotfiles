@@ -171,7 +171,19 @@ let g:lsp_async_completion = 1
 augroup Typescript
     autocmd!
     autocmd FileType typescript setlocal omnifunc=lsp#complete
+    autocmd FileType typescript setlocal tabstop=2 shiftwidth=2 softtabstop=0
+    autocmd FileType typescript.jsx setlocal tabstop=2 shiftwidth=2 softtabstop=0
+    autocmd FileType typescript.jsx highlight xmlTagName
+        \ guifg=#59ACE5
+        \ ctermfg=39
+    autocmd FileType typescript.jsx highlight xmlTag
+        \ guifg=#59ACE5
+        \ ctermfg=39
+    autocmd FileType typescript.jsx highlight xmlEndTag
+        \ guifg=#2974a1
+        \ ctermfg=26
     autocmd CompleteDone * if pumvisible() == 0 | pclose | endif
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescript.jsx
 augroup END
 inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
