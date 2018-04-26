@@ -62,6 +62,8 @@ nnoremap <Leader>p :cprevious<CR>
 nnoremap <Leader><Leader> za
 nnoremap x "_x
 nnoremap s "_s
+nnoremap t gt
+nnoremap T gT
 
 if has('unix') && !has('mac')
     set clipboard=unnamedplus
@@ -146,12 +148,12 @@ elseif s:isWsl() && executable('AutoHotkeyU64.exe')
     augroup END
 endif
 
-:packadd! vim-submode
-let g:submode_timeoutlen = 3000
-call submode#enter_with('movetab', 'n', '', 'gt', 'gt')
-call submode#enter_with('movetab', 'n', '', 'gT', 'gT')
-call submode#map('movetab', 'n', '', 't', 'gt')
-call submode#map('movetab', 'n', '', 'T', 'gT')
+":packadd! vim-submode
+"let g:submode_timeoutlen = 3000
+"call submode#enter_with('movetab', 'n', '', 'gt', 'gt')
+"call submode#enter_with('movetab', 'n', '', 'gT', 'gT')
+"call submode#map('movetab', 'n', '', 't', 'gt')
+"call submode#map('movetab', 'n', '', 'T', 'gT')
 
 " TypeScript
 if executable('typescript-language-server')
