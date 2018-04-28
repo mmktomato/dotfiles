@@ -45,23 +45,26 @@ set list
 set listchars=tab:»\ ,trail:_,extends:>,precedes:<
 set backspace=indent,eol,start
 
+""" QuickFix
 augroup quickFix
     autocmd!
     autocmd QuickFixCmdPost *grep* cwindow
 augroup END
+:packadd! vim-submode
+let g:submode_timeoutlen = 30000
+call submode#enter_with('quickfix', 'n', '', 'qj', ':cnext<CR>')
+call submode#enter_with('quickfix', 'n', '', 'qk', ':cprevious<CR>')
+call submode#map('quickfix', 'n', '', 'j', ':cnext<CR>')
+call submode#map('quickfix', 'n', '', 'k', ':cprevious<CR>')
 
 let mapleader="\<Space>"
 noremap j gj
 noremap k gk
 inoremap <silent> jj <ESC>
 inoremap <silent> っj <ESC>
-nnoremap qn :cnext<CR>
-nnoremap qp :cprevious<CR>
-nnoremap <Leader>n :cnext<CR>
-nnoremap <Leader>p :cprevious<CR>
 nnoremap <Leader><Leader> za
-nnoremap x "_x
-nnoremap s "_s
+noremap x "_x
+noremap s "_s
 nnoremap t gt
 nnoremap T gT
 
@@ -147,13 +150,6 @@ elseif s:isWsl() && executable('AutoHotkeyU64.exe')
         autocmd InsertLeave * :call system('AutoHotkeyU64.exe "C:\tool\ImDisable.ahk"')
     augroup END
 endif
-
-":packadd! vim-submode
-"let g:submode_timeoutlen = 3000
-"call submode#enter_with('movetab', 'n', '', 'gt', 'gt')
-"call submode#enter_with('movetab', 'n', '', 'gT', 'gT')
-"call submode#map('movetab', 'n', '', 't', 'gt')
-"call submode#map('movetab', 'n', '', 'T', 'gT')
 
 " TypeScript
 if executable('typescript-language-server')
