@@ -12,6 +12,8 @@ function bootstrap_bash() {
 
     curl $GIT_COMPLETION_REMOTE_PREFIX/git-completion.bash > $GIT_COMPLETION_LOCAL_PREFIX/git-completion.bash
     curl $GIT_COMPLETION_REMOTE_PREFIX/git-prompt.sh > $GIT_COMPLETION_LOCAL_PREFIX/git-prompt.sh
+
+    git config --global push.default simple
 }
 
 cd ~

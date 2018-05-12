@@ -33,6 +33,13 @@ Run bootstrap script.
 . bootstrapper/bash.sh
 ```
 
+### git
+
+```bash
+$ git config user.name '<YOUR_NAME>'
+$ git config user.email '<YOUR_EMAIL_ADDRESS>'
+```
+
 ## Vim
 
 Run bootstrap script.
