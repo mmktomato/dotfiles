@@ -140,13 +140,9 @@ if has('mac') && executable('swim')
         autocmd!
         autocmd InsertLeave * :call system('swim use com.apple.keyboardlayout.all')
     augroup END
-elseif s:isWsl() && executable('AutoHotkeyU64.exe')
+elseif s:isWsl() && executable('AutoHotkeyU64.exe') && filereadable('/mnt/c/tool/ImDisable.ahk')
     augroup insertLeave
         autocmd!
-        " TODO:
-        "   Replace 'AutoHotkeyU64.exe "C:\tool\ImDisable.ahk"' to
-        "   'AutoHotkeyU64.exe `wslpath -m "~/dotfiles/ImDisable.ahk"`'
-        "   if `wslpath` command is available.
         autocmd InsertLeave * :call system('AutoHotkeyU64.exe "C:\tool\ImDisable.ahk"')
     augroup END
 endif
