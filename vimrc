@@ -57,6 +57,8 @@ call submode#enter_with('quickfix', 'n', '', 'qk', ':cprevious<CR>')
 call submode#map('quickfix', 'n', '', 'j', ':cnext<CR>')
 call submode#map('quickfix', 'n', '', 'k', ':cprevious<CR>')
 
+imap <Nul> <C-Space>
+
 let mapleader="\<Space>"
 noremap j gj
 noremap k gk
