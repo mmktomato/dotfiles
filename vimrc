@@ -8,6 +8,8 @@ if has('vim_starting')
 endif
 
 set packpath^=~/vimfiles
+set runtimepath^=~/vimfiles/pack/cui/start/slimv  " ummm...
+
 filetype plugin indent on
 
 function! s:isWsl()
@@ -186,6 +188,14 @@ inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
 inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 imap <C-space> <Plug>(asyncomplete_force_refresh)
+
+""" slimv
+let g:slimv_swank_cmd = "!ros -e '(ql:quickload :swank) (swank:create-server)' wait &"
+let g:slimv_lisp = 'ros run'
+let g:slimv_impl = 'sbcl'
+augroup slimv
+    autocmd FileType lisp setlocal foldmethod=marker foldmarker=(,) foldminlines=1
+augroup END
 
 " swap file (.swp)
 set directory=~/vimfiles/tmp
