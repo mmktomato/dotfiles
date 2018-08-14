@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function git_clone() {
     local url=$1
