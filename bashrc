@@ -1,6 +1,6 @@
 ## on .bashrc
-# if [ -f ~/dotfiles/mybashrc ] ; then
-#   . ~/dotfiles/mybashrc
+# if [ -f ~/dotfiles/bashrc ] ; then
+#   . ~/dotfiles/bashrc
 # fi
 
 export LANG=ja_JP.UTF-8

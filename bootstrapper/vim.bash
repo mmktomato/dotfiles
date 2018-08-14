@@ -9,7 +9,7 @@ function bootstrap_vim() {
     ln -s $CLONE_DIR/gvimrc .gvimrc
 
     cp $CLONE_DIR/font.sample.vim $CLONE_DIR/font.vim
-    . $CLONE_DIR/vim-plugins.sh
+    . $CLONE_DIR/vim-plugins.bash
 }
 
 cd ~
