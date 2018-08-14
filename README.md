@@ -30,7 +30,7 @@ brew install coreutils
 Run bootstrap script.
 
 ```bash
-. bootstrapper/bash.sh
+. bootstrapper/bash.bash
 ```
 
 ### git
@@ -45,7 +45,7 @@ $ git config user.email '<YOUR_EMAIL_ADDRESS>'
 Run bootstrap script.
 
 ```bash
-. bootstrapper/vim.sh
+. bootstrapper/vim.bash
 ```
 
 Edit `dotfiles/font.vim`. (This file is `.gitignore` d.)
@@ -69,7 +69,7 @@ Download [AutoHotkey](https://autohotkey.com/) and make sure `AutoHotkeyU64.exe`
 Run bootstrap script.
 
 ```bash
-. bootstrapper/emacs.sh
+. bootstrapper/emacs.bash
 ```
 
 Edit `dotfiles/emacs.d/lisp/myfont.el`. (This file is `.gitignore` d.)
