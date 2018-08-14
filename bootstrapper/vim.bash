@@ -1,18 +1,16 @@
 #!/bin/bash
 
 function bootstrap_vim() {
-    local CLONE_DIR=dotfiles
+    local DOTFILES=${1:-~/dotfiles}
 
-    mkdir -p vimfiles/tmp
+    mkdir -p ~/vimfiles/tmp
 
-    ln -s $CLONE_DIR/vimrc .vimrc
-    ln -s $CLONE_DIR/gvimrc .gvimrc
+    ln -s $DOTFILES/vimrc ~/.vimrc
+    ln -s $DOTFILES/gvimrc ~/.gvimrc
 
-    cp $CLONE_DIR/font.sample.vim $CLONE_DIR/font.vim
-    . $CLONE_DIR/vim-plugins.bash
+    cp $DOTFILES/font.sample.vim $DOTFILES/font.vim
+    . $DOTFILES/vim-plugins.bash
 }
 
-cd ~
 bootstrap_vim
-cd - > /dev/null 2>&1
 

@@ -1,15 +1,13 @@
 #!/bin/bash
 
 function bootstrap_emacs() {
-    local CLONE_DIR=dotfiles
+    local DOTFILES=${1:-~/dotfiles}
 
-    ln -s $CLONE_DIR/emacs.d .emacs.d
+    ln -s $DOTFILES/emacs.d ~/.emacs.d
 
-    emacs -Q --script $CLONE_DIR/emacs.d/install.el
-    cp $CLONE_DIR/emacs.d/lisp/myfont.sample.el $CLONE_DIR/emacs.d/lisp/myfont.el
+    emacs -Q --script $DOTFILES/emacs.d/install.el
+    cp $DOTFILES/emacs.d/lisp/myfont.sample.el $DOTFILES/emacs.d/lisp/myfont.el
 }
 
-cd ~
 bootstrap_emacs
-cd - > /dev/null 2>&1
 

@@ -1,22 +1,21 @@
 #!/bin/bash
 
 function bootstrap_bash() {
-    local CLONE_DIR=dotfiles
+    local DOTFILES=${1:-~/dotfiles}
+
     local GIT_COMPLETION_REMOTE_PREFIX=https://raw.githubusercontent.com/git/git/master/contrib/completion
     local GIT_COMPLETION_LOCAL_PREFIX=git-completion
 
-    ln -s $CLONE_DIR/inputrc .inputrc
+    ln -s $DOTFILES/inputrc ~/.inputrc
 
-    mkdir .mytrash
-    mkdir $GIT_COMPLETION_LOCAL_PREFIX
+    mkdir ~/.mytrash
+    mkdir ~/$GIT_COMPLETION_LOCAL_PREFIX
 
-    curl $GIT_COMPLETION_REMOTE_PREFIX/git-completion.bash > $GIT_COMPLETION_LOCAL_PREFIX/git-completion.bash
-    curl $GIT_COMPLETION_REMOTE_PREFIX/git-prompt.sh > $GIT_COMPLETION_LOCAL_PREFIX/git-prompt.sh
+    curl $GIT_COMPLETION_REMOTE_PREFIX/git-completion.bash > ~/$GIT_COMPLETION_LOCAL_PREFIX/git-completion.bash
+    curl $GIT_COMPLETION_REMOTE_PREFIX/git-prompt.sh > ~/$GIT_COMPLETION_LOCAL_PREFIX/git-prompt.sh
 
     git config --global push.default current
 }
 
-cd ~
-bootstrap_bash
-cd - > /dev/null 2>&1
+bootstrap_bash $1
 
