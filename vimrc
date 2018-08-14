@@ -10,6 +10,10 @@ endif
 set packpath^=~/vimfiles
 set runtimepath^=~/vimfiles/pack/cui/start/slimv  " ummm...
 
+if executable('bash')
+    set shell=bash\ --login
+endif
+
 filetype plugin indent on
 
 function! s:isWsl()
