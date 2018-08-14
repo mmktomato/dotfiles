@@ -1,0 +1,21 @@
+FROM ubuntu:18.04
+
+ENV TERM=xterm-256color
+ENV HOME=/root
+# ENV SHELL=/bin/bash
+
+WORKDIR $HOME
+
+RUN apt update \
+  && apt install -y locales curl vim git \
+  && echo "ja_JP.UTF-8 UTF-8" >> /etc/locale.gen \
+  && locale-gen \
+  && git clone https://github.com/mmktomato/dotfiles.git $HOME/dotfiles
+
+# TODO: git config
+
+RUN echo 'if [ -f $HOME/dotfiles/bashrc ] ; then . $HOME/dotfiles/bashrc; fi' >> $HOME/.bashrc \
+  && /bin/bash -c '. $HOME/dotfiles/bootstrapper/bash.bash $HOME/dotfiles' \
+  && /bin/bash -c '. $HOME/dotfiles/bootstrapper/vim.bash $HOME/dotfiles'
+
+CMD ["/bin/bash"]
