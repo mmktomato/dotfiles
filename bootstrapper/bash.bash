@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function bootstrap_bash() {
     local CLONE_DIR=dotfiles

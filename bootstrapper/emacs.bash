@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 function bootstrap_emacs() {
     local CLONE_DIR=dotfiles
