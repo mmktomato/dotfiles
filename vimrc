@@ -76,6 +76,8 @@ noremap x "_x
 noremap s "_s
 nnoremap t gt
 nnoremap T gT
+set termkey=<C-l>
+tnoremap <C-j> <C-l>N
 
 if has('unix') && !has('mac')
     set clipboard=unnamedplus
