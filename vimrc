@@ -76,7 +76,7 @@ noremap x "_x
 noremap s "_s
 nnoremap t gt
 nnoremap T gT
-set termkey=<C-l>
+set termwinkey=<C-l>
 tnoremap <C-j> <C-l>N
 
 if has('unix') && !has('mac')
