@@ -191,8 +191,8 @@ augroup Typescript
     autocmd CompleteDone * if pumvisible() == 0 | pclose | endif
     autocmd BufNewFile,BufRead *.tsx set filetype=typescript.jsx
 augroup END
-inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
-inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
 inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
 imap <C-space> <Plug>(asyncomplete_force_refresh)
 
