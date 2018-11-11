@@ -21,7 +21,6 @@ case $OSTYPE in
              ;;
 esac
 
-alias ec='emacsclient'
 alias gs='git status'
 alias gd='git diff'
 alias mv='mv -i'

@@ -8,24 +8,12 @@ if has('vim_starting')
 endif
 
 set packpath^=~/vimfiles
-set runtimepath^=~/vimfiles/pack/cui/start/slimv  " ummm...
-
-if executable('bash')
-    " This breaks vim-lsp ...
-    " set shell=bash\ --login
-endif
 
 filetype plugin indent on
 
 function! s:isWsl()
     return filereadable('/proc/sys/fs/binfmt_misc/WSLInterop')
 endfunction
-
-""" vim-geeknote
-"let g:GeeknoteFormat = "markdown"
-"let g:GeeknoteScratchDirectory = $HOME . '/vimfiles/tmp'
-"autocmd FileType geeknote setlocal nonumber
-"""""""""""""""""""""""""""""
 
 """ ctrlp
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
@@ -219,14 +207,6 @@ augroup END
 augroup Go
     autocmd!
     autocmd FileType go setlocal noexpandtab
-augroup END
-
-""" slimv
-let g:slimv_swank_cmd = "!ros -e '(ql:quickload :swank) (swank:create-server)' wait &"
-let g:slimv_lisp = 'ros run'
-let g:slimv_impl = 'sbcl'
-augroup slimv
-    autocmd FileType lisp setlocal foldmethod=marker foldmarker=(,) foldminlines=1
 augroup END
 
 " swap file (.swp)
