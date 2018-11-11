@@ -158,22 +158,46 @@ elseif s:isWsl() && executable('AutoHotkeyU64.exe') && filereadable('/mnt/c/tool
     augroup END
 endif
 
-" TypeScript
-if executable('typescript-language-server')
-    augroup lsp_setup
-        autocmd!
+" LSP
+let g:lsp_async_completion = 1
+"let g:lsp_log_verbose = 1
+"let g:lsp_log_file = expand('~/vim-lsp.log')
+let g:asyncomplete_auto_popup = 0
+
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+imap <C-space> <Plug>(asyncomplete_force_refresh)
+
+augroup LSP
+    autocmd!
+    autocmd CompleteDone * if pumvisible() == 0 | pclose | endif
+augroup END
+
+augroup lsp_setup
+    autocmd!
+
+    " TypeScript
+    if executable('typescript-language-server')
         autocmd User lsp_setup call lsp#register_server({
             \ 'name': 'typescript-language-server',
             \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
             \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
             \ 'whitelist': ['typescript', 'typescript.jsx'],
             \ })
-    augroup END
-endif
-let g:lsp_async_completion = 1
-"let g:lsp_log_verbose = 1
-"let g:lsp_log_file = expand('~/vim-lsp.log')
-let g:asyncomplete_auto_popup = 0
+    endif
+
+    " Go
+    if executable('go-langserver')
+        autocmd User lsp_setup call lsp#register_server({
+            \ 'name': 'go-langserver',
+            \ 'cmd': {server_info->['go-langserver', '-gocodecompletion', '-mode', 'stdio']},
+            \ 'whitelist': ['go'],
+            \ })
+    endif
+augroup END
+
+" TypeScript
 augroup Typescript
     autocmd!
     autocmd FileType typescript setlocal omnifunc=lsp#complete
@@ -188,13 +212,14 @@ augroup Typescript
     autocmd FileType typescript.jsx highlight xmlEndTag
         \ guifg=#2974a1
         \ ctermfg=26
-    autocmd CompleteDone * if pumvisible() == 0 | pclose | endif
     autocmd BufNewFile,BufRead *.tsx set filetype=typescript.jsx
 augroup END
-inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
-inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
-inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
-imap <C-space> <Plug>(asyncomplete_force_refresh)
+
+" Go
+augroup Go
+    autocmd!
+    autocmd FileType go setlocal noexpandtab
+augroup END
 
 """ slimv
 let g:slimv_swank_cmd = "!ros -e '(ql:quickload :swank) (swank:create-server)' wait &"

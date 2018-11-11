@@ -61,3 +61,10 @@ if [ -d ${HOME}/.rbenv/bin ]; then
     eval "$(rbenv init -)"
 fi
 
+# GOPATH
+export GOPATH=${HOME}/go
+if [ ! -f ${GOPATH} ] ; then
+    mkdir -p ${GOPATH}/bin
+    mkdir -p ${GOPATH}/src
+fi
+export PATH=${GOPATH}/bin:${PATH}
