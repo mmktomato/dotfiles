@@ -101,8 +101,8 @@ augroup colorScheme
     autocmd!
     autocmd ColorScheme * highlight SpecialKey
         \ cterm=bold
-        \ ctermfg=227
-        \ guifg=yellow
+        \ ctermfg=34
+        \ guifg=green
         \ ctermbg=NONE
         \ guibg=NONE
     autocmd ColorScheme * highlight Search
