@@ -19,12 +19,13 @@ endfunction
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 let g:ctrlp_clear_cache_on_exit = 1
 let g:ctrlp_lazy_update = 1
+let g:ctrlp_working_path_mode = 'w'
 let g:ctrlp_prompt_mappings = {
     \ 'PrtBS()': ['<c-h>', '<bs>'],
     \ 'PrtCurLeft()': ['<left>'],
     \ }
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/](\.(git|hg|svn)|__pycache__|node_modules|vendor)$',
+    \ 'dir':  '\v[\/](\.(git|hg|svn)|__pycache__|node_modules|vendor|bin)$',
     \ 'file': '\v\.(exe|so|dll|jar|class)$',
     \ 'link': 'some_bad_symbolic_links',
     \ }
