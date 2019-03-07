@@ -95,7 +95,7 @@ function! MyFoldText()
 endfunction
 set foldtext=MyFoldText()
 set foldmethod=indent
-set foldcolumn=2
+"set foldcolumn=2
 set nocursorline
 
 augroup colorScheme
