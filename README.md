@@ -53,8 +53,7 @@ Edit `dotfiles/font.vim`. (This file is `.gitignore` d.)
 ### Disable Input Method
 #### macOS
 
-Install [swim](https://github.com/mitsuse/swim) and link it to `~/bin`. (This directory is included in $PATH. Start bash again if necessary.)
-Make sure that `ABC`(`com.apple.keyboardlayout.all`) exists as input source.
+Nothing to do.
 
 #### WSL
 
