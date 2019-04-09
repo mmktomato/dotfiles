@@ -138,7 +138,8 @@ set statusline=\ %f%m%r%h%w%=\ %Y\ %{&ff}\ %{&fenc}\ [%l/%L][%c][%02.2B]
 if has('mac') && executable('swim')
     augroup insertLeave
         autocmd!
-        autocmd InsertLeave * :call system('swim use com.apple.keylayout.US')
+        "autocmd InsertLeave * :call system('swim use com.apple.keylayout.US')
+        autocmd InsertLeave * :call system('osascript -e ''tell application "System Events" to key code {102}'' &')
     augroup END
 elseif s:isWsl() && executable('AutoHotkeyU64.exe') && filereadable('/mnt/c/tool/ImDisable.ahk')
     augroup insertLeave
