@@ -135,11 +135,12 @@ set incsearch
 set laststatus=2
 set statusline=\ %f%m%r%h%w%=\ %Y\ %{&ff}\ %{&fenc}\ [%l/%L][%c][%02.2B]
 
-if has('mac') && executable('swim')
+if has('mac')
     augroup insertLeave
         autocmd!
-        "autocmd InsertLeave * :call system('swim use com.apple.keylayout.US')
-        autocmd InsertLeave * :call system('osascript -e ''tell application "System Events" to key code {102}'' &')
+        autocmd InsertLeave * :call job_start(
+                    \ ['osascript', '-e', 'tell application "System Events" to key code {102}'],
+                    \ {'in_io': 'null', 'out_io': 'null', 'err_io': 'null'})
     augroup END
 elseif s:isWsl() && executable('AutoHotkeyU64.exe') && filereadable('/mnt/c/tool/ImDisable.ahk')
     augroup insertLeave
