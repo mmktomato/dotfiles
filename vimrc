@@ -135,6 +135,8 @@ set incsearch
 set laststatus=2
 set statusline=\ %f%m%r%h%w%=\ %Y\ %{&ff}\ %{&fenc}\ [%l/%L][%c][%02.2B]
 
+set ttimeoutlen=1
+
 if has('mac')
     augroup insertLeave
         autocmd!
