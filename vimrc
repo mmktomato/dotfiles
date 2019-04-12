@@ -15,6 +15,16 @@ function! s:isWsl()
     return filereadable('/proc/sys/fs/binfmt_misc/WSLInterop')
 endfunction
 
+function! s:disableIme()
+    if has('mac')
+        call job_start(['osascript', '-e', 'tell application "System Events" to key code {102}'],
+                    \ {'in_io': 'null', 'out_io': 'null', 'err_io': 'null'})
+    elseif s:isWsl() && executable('AutoHotkeyU64.exe') && filereadable('/mnt/c/tool/ImDisable.ahk')
+        call job_start('AutoHotkeyU64.exe "C:\tool\ImDisable.ahk"',
+                    \ {'in_io': 'null', 'out_io': 'null', 'err_io': 'null'})
+    endif
+endfunction
+
 """ ctrlp
 let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 let g:ctrlp_clear_cache_on_exit = 1
@@ -59,7 +69,7 @@ let mapleader="\<Space>"
 noremap j gj
 noremap k gk
 inoremap <silent> jj <ESC>
-inoremap <silent> っj <ESC>
+inoremap <silent> っj <C-o>:call <SID>disableIme()<CR><ESC>
 nnoremap <Leader><Leader> za
 noremap x "_x
 noremap s "_s
@@ -134,22 +144,6 @@ set hlsearch
 set incsearch
 set laststatus=2
 set statusline=\ %f%m%r%h%w%=\ %Y\ %{&ff}\ %{&fenc}\ [%l/%L][%c][%02.2B]
-
-set ttimeoutlen=1
-
-if has('mac')
-    augroup insertLeave
-        autocmd!
-        autocmd InsertLeave * :call job_start(
-                    \ ['osascript', '-e', 'tell application "System Events" to key code {102}'],
-                    \ {'in_io': 'null', 'out_io': 'null', 'err_io': 'null'})
-    augroup END
-elseif s:isWsl() && executable('AutoHotkeyU64.exe') && filereadable('/mnt/c/tool/ImDisable.ahk')
-    augroup insertLeave
-        autocmd!
-        autocmd InsertLeave * :call system('AutoHotkeyU64.exe "C:\tool\ImDisable.ahk"')
-    augroup END
-endif
 
 " LSP
 let g:lsp_async_completion = 1
