@@ -184,6 +184,12 @@ augroup lsp_setup
     endif
 augroup END
 
+" Javascript
+augroup Javascript
+    autocmd!
+    autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=0
+augroup END
+
 " TypeScript
 augroup Typescript
     autocmd!
