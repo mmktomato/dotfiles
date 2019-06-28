@@ -62,8 +62,8 @@ fi
 
 # GOPATH
 export GOPATH=${HOME}/go
-if [ ! -f ${GOPATH} ] ; then
+if [ ! -d ${GOPATH} ] ; then
     mkdir -p ${GOPATH}/bin
-    mkdir -p ${GOPATH}/src
 fi
 export PATH=${GOPATH}/bin:${PATH}
+export GO111MODULE=on

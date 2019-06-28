@@ -167,7 +167,7 @@ augroup lsp_setup
     " TypeScript
     if executable('typescript-language-server')
         autocmd User lsp_setup call lsp#register_server({
-            \ 'name': 'typescript-language-server',
+            \ 'name': 'typescript',
             \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
             \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
             \ 'whitelist': ['typescript', 'typescript.jsx'],
@@ -175,10 +175,10 @@ augroup lsp_setup
     endif
 
     " Go
-    if executable('go-langserver')
+    if executable('gopls')
         autocmd User lsp_setup call lsp#register_server({
-            \ 'name': 'go-langserver',
-            \ 'cmd': {server_info->['go-langserver', '-gocodecompletion', '-mode', 'stdio']},
+            \ 'name': 'golang',
+            \ 'cmd': {server_info->['gopls']},
             \ 'whitelist': ['go'],
             \ })
     endif
