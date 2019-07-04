@@ -170,7 +170,7 @@ augroup lsp_setup
             \ 'name': 'typescript',
             \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
             \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
-            \ 'whitelist': ['typescript', 'typescript.jsx'],
+            \ 'whitelist': ['typescript', 'typescript.tsx'],
             \ })
     endif
 
@@ -205,7 +205,7 @@ augroup Typescript
     autocmd FileType typescript.jsx highlight xmlEndTag
         \ guifg=#2974a1
         \ ctermfg=26
-    autocmd BufNewFile,BufRead *.tsx set filetype=typescript.jsx
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 augroup END
 
 " Go
