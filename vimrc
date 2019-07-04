@@ -195,14 +195,14 @@ augroup Typescript
     autocmd!
     autocmd FileType typescript setlocal omnifunc=lsp#complete
     autocmd FileType typescript setlocal tabstop=2 shiftwidth=2 softtabstop=0
-    autocmd FileType typescript.jsx setlocal tabstop=2 shiftwidth=2 softtabstop=0
-    autocmd FileType typescript.jsx highlight xmlTagName
+    autocmd FileType typescript.tsx setlocal tabstop=2 shiftwidth=2 softtabstop=0
+    autocmd FileType typescript.tsx highlight xmlTagName
         \ guifg=#59ACE5
         \ ctermfg=39
-    autocmd FileType typescript.jsx highlight xmlTag
+    autocmd FileType typescript.tsx highlight xmlTag
         \ guifg=#59ACE5
         \ ctermfg=39
-    autocmd FileType typescript.jsx highlight xmlEndTag
+    autocmd FileType typescript.tsx highlight xmlEndTag
         \ guifg=#2974a1
         \ ctermfg=26
     autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
