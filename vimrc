@@ -17,8 +17,13 @@ endfunction
 
 function! s:disableIme()
     if has('mac')
-        call job_start(['osascript', '-e', 'tell application "System Events" to key code {102}'],
-                    \ {'in_io': 'null', 'out_io': 'null', 'err_io': 'null'})
+        if executable('swim')
+            call job_start(['swim', 'use', 'com.apple.keylayout.US'],
+                        \ {'in_io': 'null', 'out_io': 'null', 'err_io': 'null'})
+        else
+            call job_start(['osascript', '-e', 'tell application "System Events" to key code {102}'],
+                        \ {'in_io': 'null', 'out_io': 'null', 'err_io': 'null'})
+        endif
     elseif s:isWsl() && executable('AutoHotkeyU64.exe') && filereadable('/mnt/c/tool/ImDisable.ahk')
         call job_start('AutoHotkeyU64.exe "C:\tool\ImDisable.ahk"',
                     \ {'in_io': 'null', 'out_io': 'null', 'err_io': 'null'})
