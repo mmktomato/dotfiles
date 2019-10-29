@@ -11,13 +11,13 @@ cd ~
 git clone https://github.com/mmktomato/dotfiles.git
 ```
 
-## Bash
+## Bash or Zsh
 
-Add following snippet to `~/.bashrc`. Make sure that `~/.bash_profile` exists and it loads `~/.bashrc`.
+Add following snippet to `~/.bashrc` or `~/.zshrc`. Make sure `~/.bash_profile` or `~/.zprofile` exists and it loads `~/.bashrc` or `~/.zshrc`.
 
-```bash:~/.bashrc
-if [ -f ~/dotfiles/bashrc ] ; then
-  . ~/dotfiles/bashrc
+```bash:~/.bashrc or ~/.zshrc
+if [ -f ~/dotfiles/shrc ] ; then
+  . ~/dotfiles/shrc
 fi
 ```
 
@@ -30,14 +30,7 @@ brew install coreutils
 Run bootstrap script.
 
 ```bash
-. bootstrapper/bash.bash
-```
-
-### git
-
-```bash
-$ git config user.name '<YOUR_NAME>'
-$ git config user.email '<YOUR_EMAIL_ADDRESS>'
+. bootstrapper/shell.bash
 ```
 
 ## Vim

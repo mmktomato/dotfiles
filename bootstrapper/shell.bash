@@ -10,8 +10,11 @@ function bootstrap_bash() {
 
     mkdir ~/.mytrash
     mkdir ~/$GIT_COMPLETION_LOCAL_PREFIX
+    mkdir ~/.zsh
 
     curl $GIT_COMPLETION_REMOTE_PREFIX/git-completion.bash > ~/$GIT_COMPLETION_LOCAL_PREFIX/git-completion.bash
+    curl $GIT_COMPLETION_REMOTE_PREFIX/git-completion.zsh > ~/$GIT_COMPLETION_LOCAL_PREFIX/git-completion.zsh
+    ln -s ~/$GIT_COMPLETION_LOCAL_PREFIX/git-completion.zsh ~/.zsh
     curl $GIT_COMPLETION_REMOTE_PREFIX/git-prompt.sh > ~/$GIT_COMPLETION_LOCAL_PREFIX/git-prompt.sh
 
     git config --global push.default current
