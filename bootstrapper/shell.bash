@@ -18,6 +18,8 @@ function bootstrap_bash() {
     curl $GIT_COMPLETION_REMOTE_PREFIX/git-prompt.sh > ~/$GIT_COMPLETION_LOCAL_PREFIX/git-prompt.sh
 
     git config --global push.default current
+    git config --global --add merge.ff false
+    git config --global --add pull.ff only
 }
 
 bootstrap_bash $1
