@@ -40,7 +40,7 @@ let g:ctrlp_prompt_mappings = {
     \ 'PrtCurLeft()': ['<left>'],
     \ }
 let g:ctrlp_custom_ignore = {
-    \ 'dir':  '\v[\/](\.(git|hg|svn)|__pycache__|node_modules|vendor|bin)$',
+    \ 'dir':  '\v[\/](\.(git|hg|svn)|__pycache__|node_modules|vendor|bin|dist|build)$',
     \ 'file': '\v\.(exe|so|dll|jar|class)$',
     \ 'link': 'some_bad_symbolic_links',
     \ }
