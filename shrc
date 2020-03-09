@@ -31,7 +31,8 @@ case $OSTYPE in
              alias rm='\mv -f --backup=numbered --target-directory ~/.mytrash'
              ;;
     darwin*) alias ls='ls -FG'
-             alias rm='\gmv -f --backup=numbered --target-directory ~/.mytrash'
+             # https://github.com/sindresorhus/trash-cli
+             alias rm='trash'
              ;;
 esac
 
