@@ -70,12 +70,12 @@ else
     fi
 fi
 
-# ndenv
-if [ -d ${HOME}/.ndenv/bin ]; then
-    if [[ ${PATH} != *${HOME}/.ndenv/bin* ]]; then
-        export PATH=${HOME}/.ndenv/bin:${PATH}
+# nodenv
+if [ -d ${HOME}/.nodenv/bin ]; then
+    if [[ ${PATH} != *${HOME}/.nodenv/bin* ]]; then
+        export PATH=${HOME}/.nodenv/bin:${PATH}
     fi
-    eval "$(ndenv init -)"
+    eval "$(nodenv init -)"
 fi
 
 # rbenv
