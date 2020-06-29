@@ -175,7 +175,7 @@ augroup lsp_setup
             \ 'name': 'typescript',
             \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
             \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
-            \ 'whitelist': ['typescript', 'typescript.tsx'],
+            \ 'allowlist': ['typescript', 'typescript.tsx'],
             \ })
     endif
 
@@ -184,7 +184,7 @@ augroup lsp_setup
         autocmd User lsp_setup call lsp#register_server({
             \ 'name': 'golang',
             \ 'cmd': {server_info->['gopls']},
-            \ 'whitelist': ['go'],
+            \ 'allowlist': ['go'],
             \ })
     endif
 augroup END
