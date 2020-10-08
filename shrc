@@ -40,6 +40,8 @@ alias gs='git status'
 alias gd='git diff'
 alias mv='mv -i'
 alias grep='grep --color=auto'
+alias aal='docker run --rm -it -v ~/.aws:/root/.aws sportradar/aws-azure-login'
+alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws amazon/aws-cli'
 
 # git-completion
 if [ -n "$BASH_VERSION" ] && [ -f ~/git-completion/git-completion.bash ] ; then
