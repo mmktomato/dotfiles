@@ -41,7 +41,15 @@ alias gd='git diff'
 alias mv='mv -i'
 alias grep='grep --color=auto'
 alias aal='docker run --rm -it -v ~/.aws:/root/.aws sportradar/aws-azure-login'
-alias aws='docker run --rm -it -v ~/.aws:/root/.aws -v $(pwd):/aws -v ~/.kube:/root/.kube amazon/aws-cli'
+
+AWS_ALIAS_OPT='-v ~/.aws:/root/.aws -v $(pwd):/aws'
+if [ -n "$AWS_PROFILE" ]; then
+    AWS_ALIAS_OPT="$AWS_ALIAS_OPT -e AWS_PROFILE=$AWS_PROFILE"
+fi
+if [ -d ${HOME}/.kube ]; then
+    AWS_ALIAS_OPT="$AWS_ALIAS_OPT -v ${HOME}/.kube:/root/.kube"
+fi
+alias aws="docker run --rm -it $AWS_ALIAS_OPT amazon/aws-cli"
 
 # git-completion
 if [ -n "$BASH_VERSION" ] && [ -f ~/git-completion/git-completion.bash ] ; then
