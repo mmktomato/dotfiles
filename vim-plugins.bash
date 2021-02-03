@@ -27,6 +27,7 @@ function fetch_vim_plugins() {
     git_clone $github/junegunn/vim-easy-align.git $cui/start/vim-easy-align
     git_clone $github/PProvost/vim-ps1.git $cui/start/vim-ps1
     git_clone $github/kannokanno/previm.git $cui/start/previm
+    git_clone $github/skanehira/preview-markdown.vim $cui/start/preview-markdown.vim
     git_clone $github/kana/vim-submode.git $cui/start/vim-submode
     git_clone $github/leafgarland/typescript-vim $cui/start/typescript-vim
     git_clone $github/prabirshrestha/async.vim $cui/start/async.vim

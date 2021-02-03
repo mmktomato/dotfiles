@@ -50,6 +50,10 @@ let g:ctrlp_custom_ignore = {
 let g:previm_open_cmd = 'open -a firefox' " TODO: linux and windows.
 """""""""""""""""""""""""""""
 
+""" preview-markdown
+let g:preview_markdown_auto_update = 1
+"""""""""""""""""""""""""""""
+
 syntax on
 set list
 "set listchars=tab:»\ ,eol:$,trail:_,extends:>,precedes:<
