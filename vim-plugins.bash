@@ -37,6 +37,7 @@ function fetch_vim_plugins() {
     git_clone $github/peitalin/vim-jsx-typescript $cui/start/vim-jsx-typescript
     git_clone $github/cocopon/vaffle.vim $cui/start/vaffle.vim
     git_clone $github/tyru/open-browser.vim $cui/start/open-browser.vim
+    git_clone $github/mmktomato/open-backlog-issue.vim $cui/start/open-backlog-issue.vim
 }
 fetch_vim_plugins
 

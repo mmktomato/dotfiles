@@ -165,56 +165,9 @@ let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
 vmap gx <Plug>(openbrowser-smart-search)
 
-" open-backlog-issue
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" open-backlog-issue.vim
 let g:open_backlog_issue_prefix = $BACKLOG_PREFIX
-
-function! s:find_backlog_issue_key(line, caret_pos) abort
-    let search_pos = 0
-
-    while -1 < search_pos
-        let [issue_key, start, end] = matchstrpos(a:line, '\C[A-Z_]\+-[0-9]\+', search_pos)
-
-        if start <= a:caret_pos && a:caret_pos <= (end - 1)
-            return issue_key
-        endif
-
-        let search_pos = end
-    endwhile
-
-    return ''
-endfunction
-
-function! s:warn(msg) abort
-    execute 'echohl' 'WarningMsg'
-    try
-        echomsg a:msg
-    finally
-        echohl None
-    endtry
-endfunction
-
-" function! s:open_backlog_issue() abort
-function! OpenBacklogIssue() abort
-    if g:open_backlog_issue_prefix == ''
-        call s:warn('g:open_backlog_issue_prefix is not set')
-        return
-    endif
-
-    let issue_key = s:find_backlog_issue_key(getline('.'), col('.') - 1)
-
-    if issue_key != ''
-        let url = g:open_backlog_issue_prefix . '/view/' . issue_key
-        call openbrowser#open(url)
-    endif
-endfunction
-
-" command! OpenBacklogIssue :call s:open_backlog_issue()
-" nnoremap <silent> <Plug>(open-backlog-issue) :call s:open_backlog_issue()<CR>
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-" nmap gbx <Plug>(open-backlog-issue)
-nnoremap gbx :call OpenBacklogIssue()<CR>
+nmap gbx <Plug>(open-backlog-issue)
 
 inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
 inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
