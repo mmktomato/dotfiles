@@ -38,6 +38,7 @@ function fetch_vim_plugins() {
     git_clone $github/cocopon/vaffle.vim $cui/start/vaffle.vim
     git_clone $github/tyru/open-browser.vim $cui/start/open-browser.vim
     git_clone $github/mmktomato/open-backlog-issue.vim $cui/start/open-backlog-issue.vim
+    git_clone $github/thinca/vim-themis $cui/start/vim-themis
 }
 fetch_vim_plugins
 
