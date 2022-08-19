@@ -72,9 +72,11 @@ else
 fi
 
 # nodenv
-if [ -d ${HOME}/.nodenv/bin ]; then
-    if [[ ${PATH} != *${HOME}/.nodenv/bin* ]]; then
-        export PATH=${HOME}/.nodenv/bin:${PATH}
+if [ -d ${HOME}/.nodenv ]; then
+    if [ -d ${HOME}/.nodenv/bin ]; then
+        if [[ ${PATH} != *${HOME}/.nodenv/bin* ]]; then
+            export PATH=${HOME}/.nodenv/bin:${PATH}
+        fi
     fi
     eval "$(nodenv init -)"
 fi
