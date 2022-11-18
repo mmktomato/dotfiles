@@ -1,10 +1,7 @@
 # Emacs
-/emacs.d/*
-!/emacs.d/init.el
-!/emacs.d/install.el
-!/emacs.d/lisp
-!/emacs.d/md_template.css
-/emacs.d/lisp/myfont.el
-
-# Vim
-/font.vim
+/old/emacs.d/*
+!/old/emacs.d/init.el
+!/old/emacs.d/install.el
+!/old/emacs.d/lisp
+!/old/emacs.d/md_template.css
+/old/emacs.d/lisp/myfont.el

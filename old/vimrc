@@ -46,8 +46,17 @@ let g:ctrlp_custom_ignore = {
     \ }
 """""""""""""""""""""""""""""
 
+""" previm
+let g:previm_open_cmd = 'open -a firefox' " TODO: linux and windows.
+"""""""""""""""""""""""""""""
+
+""" preview-markdown
+let g:preview_markdown_auto_update = 1
+"""""""""""""""""""""""""""""
+
 syntax on
 set list
+"set listchars=tab:»\ ,eol:$,trail:_,extends:>,precedes:<
 set listchars=tab:»\ ,trail:_,extends:>,precedes:<
 set backspace=indent,eol,start
 
@@ -93,6 +102,11 @@ set tabstop=4
 set shiftwidth=4
 set softtabstop=0 " same as tabstop
 
+augroup fileTypeIndent
+    autocmd!
+    autocmd FileType xml,ruby,eruby,yaml,scss setlocal tabstop=2 shiftwidth=2 softtabstop=0
+augroup END
+
 function! MyFoldText()
     let linecount = v:foldend - v:foldstart + 1
     let indent = repeat(' ', v:foldlevel * shiftwidth())
@@ -100,6 +114,7 @@ function! MyFoldText()
 endfunction
 set foldtext=MyFoldText()
 set foldmethod=indent
+"set foldcolumn=2
 set nocursorline
 
 augroup colorScheme
@@ -118,6 +133,12 @@ augroup colorScheme
     autocmd ColorScheme * highlight IncSearch
         \ ctermfg=127
         \ guifg=darkmagenta
+    "autocmd ColorScheme * highlight CursorLine
+    "    \ cterm=None
+    "    \ ctermbg=236
+    "autocmd ColorScheme * highlight CursorLineNr
+    "    \ term=bold
+    "    \ ctermfg=227
     autocmd ColorScheme * highlight Terminal
         \ ctermbg=16
         \ guibg=black
@@ -133,6 +154,12 @@ set incsearch
 set laststatus=2
 set statusline=\ %f%m%r%h%w%=\ %Y\ %{&ff}\ %{&fenc}\ [%l/%L][%c][%02.2B]
 
+" LSP
+let g:lsp_async_completion = 1
+"let g:lsp_log_verbose = 1
+"let g:lsp_log_file = expand('~/vim-lsp.log')
+let g:asyncomplete_auto_popup = 0
+
 " open-browser.vim
 let g:netrw_nogx = 1 " disable netrw's gx mapping.
 nmap gx <Plug>(openbrowser-smart-search)
@@ -141,6 +168,69 @@ vmap gx <Plug>(openbrowser-smart-search)
 " open-backlog-issue.vim
 let g:open_backlog_issue_prefix = $BACKLOG_PREFIX
 nmap gbx <Plug>(open-backlog-issue)
+
+inoremap <expr> <C-j> pumvisible() ? "\<C-n>" : "\<C-j>"
+inoremap <expr> <C-k> pumvisible() ? "\<C-p>" : "\<C-k>"
+inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<cr>"
+imap <C-space> <Plug>(asyncomplete_force_refresh)
+
+augroup LSP
+    autocmd!
+    autocmd CompleteDone * if pumvisible() == 0 | pclose | endif
+augroup END
+
+augroup lsp_setup
+    autocmd!
+
+    " TypeScript
+    if executable('typescript-language-server')
+        autocmd User lsp_setup call lsp#register_server({
+            \ 'name': 'typescript',
+            \ 'cmd': {server_info->[&shell, &shellcmdflag, 'typescript-language-server --stdio']},
+            \ 'root_uri':{server_info->lsp#utils#path_to_uri(lsp#utils#find_nearest_parent_file_directory(lsp#utils#get_buffer_path(), 'tsconfig.json'))},
+            \ 'allowlist': ['typescript', 'typescript.tsx'],
+            \ })
+    endif
+
+    " Go
+    if executable('gopls')
+        autocmd User lsp_setup call lsp#register_server({
+            \ 'name': 'golang',
+            \ 'cmd': {server_info->['gopls']},
+            \ 'allowlist': ['go'],
+            \ })
+    endif
+augroup END
+
+" Javascript
+augroup Javascript
+    autocmd!
+    autocmd FileType javascript setlocal tabstop=2 shiftwidth=2 softtabstop=0
+augroup END
+
+" TypeScript
+augroup Typescript
+    autocmd!
+    autocmd FileType typescript setlocal omnifunc=lsp#complete
+    autocmd FileType typescript setlocal tabstop=2 shiftwidth=2 softtabstop=0
+    autocmd FileType typescript.tsx setlocal tabstop=2 shiftwidth=2 softtabstop=0
+    autocmd FileType typescript.tsx highlight xmlTagName
+        \ guifg=#59ACE5
+        \ ctermfg=39
+    autocmd FileType typescript.tsx highlight xmlTag
+        \ guifg=#59ACE5
+        \ ctermfg=39
+    autocmd FileType typescript.tsx highlight xmlEndTag
+        \ guifg=#2974a1
+        \ ctermfg=26
+    autocmd BufNewFile,BufRead *.tsx set filetype=typescript.tsx
+augroup END
+
+" Go
+augroup Go
+    autocmd!
+    autocmd FileType go setlocal noexpandtab
+augroup END
 
 " swap file (.swp)
 set directory=~/vimfiles/tmp
@@ -153,3 +243,4 @@ set viminfo+=n~/vimfiles/tmp/viminfo.txt
 
 " undo file (.un~)
 set undodir=~/vimfiles/tmp/
+

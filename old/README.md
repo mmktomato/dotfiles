@@ -41,6 +41,8 @@ Run bootstrap script.
 . bootstrapper/vim.bash
 ```
 
+Edit `dotfiles/font.vim`. (This file is `.gitignore` d.)
+
 ### Disable Input Method
 #### macOS
 
@@ -54,3 +56,13 @@ $ cp ImDisable.ahk /mnt/c/tool/
 ```
 
 Download [AutoHotkey](https://autohotkey.com/) and make sure `AutoHotkeyU64.exe` is in Windows' $PATH.
+
+## Emacs
+
+Run bootstrap script.
+
+```bash
+. bootstrapper/emacs.bash
+```
+
+Edit `dotfiles/emacs.d/lisp/myfont.el`. (This file is `.gitignore` d.)

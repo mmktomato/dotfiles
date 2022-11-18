@@ -40,6 +40,7 @@ alias gs='git status'
 alias gd='git diff'
 alias mv='mv -i'
 alias grep='grep --color=auto'
+alias aal='docker run --rm -it -v ~/.aws:/root/.aws sportradar/aws-azure-login'
 
 # git-completion
 if [ -n "$BASH_VERSION" ] && [ -f ~/git-completion/git-completion.bash ] ; then
@@ -79,3 +80,19 @@ if [ -d ${HOME}/.nodenv ]; then
     fi
     eval "$(nodenv init -)"
 fi
+
+# rbenv
+if [ -d ${HOME}/.rbenv/bin ]; then
+    if [[ ${PATH} != *${HOME}/.rbenv/bin* ]]; then
+        export PATH=${HOME}/.rbenv/bin:${PATH}
+    fi
+    eval "$(rbenv init -)"
+fi
+
+# GOPATH
+export GOPATH=${HOME}/go
+if [ ! -d ${GOPATH} ] ; then
+    mkdir -p ${GOPATH}/bin
+fi
+export PATH=${GOPATH}/bin:${PATH}
+export GO111MODULE=on
