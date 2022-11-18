@@ -33,6 +33,12 @@ Run bootstrap script.
 . bootstrapper/shell.bash
 ```
 
+## VSCode
+
+Install [VSCodeVim](https://marketplace.visualstudio.com/items?itemName=vscodevim.vim).
+
+Copy the content of `vscode.settings.json` to VSCode's settings.json.
+
 ## Vim
 
 Run bootstrap script.

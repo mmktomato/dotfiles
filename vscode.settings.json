@@ -1,0 +1,22 @@
+{
+    "vim.normalModeKeyBindingsNonRecursive": [
+        { "before": ["u"], "commands" : ["undo"] },
+        { "before": ["<C-r>"], "commands" : ["redo"] },
+        { "before": ["<leader>", "<leader>"], "after" : ["z", "a"] },
+        { "before": ["x"], "after": ["\"", "_", "x"] },
+        { "before": ["s"], "after": ["\"", "_", "s"] },
+        { "before": ["t"], "after": ["g", "t"] },
+        { "before": ["T"], "after": ["g", "T"] }
+    ],
+    "vim.visualModeKeyBindingsNonRecursive": [
+        { "before": ["x"], "after": ["\"", "_", "x"] },
+        { "before": ["s"], "after": ["\"", "_", "s"] }
+    ],
+    "vim.insertModeKeyBindingsNonRecursive": [
+        { "before": ["j", "j"], "after": ["<Esc>"] },
+        { "before": ["<C-j>"], "after": ["<CR>"] }
+    ],
+    "vim.useSystemClipboard": true,
+    "vim.hlsearch": true,
+    "vim.leader": "<space>"
+}
