@@ -70,6 +70,20 @@ else
     fi
 fi
 
+# previous command status
+function prev_status() {
+    s="$?"
+    if [ $s -eq 0 ] ; then
+        # echo ''
+    else
+        echo "[$s] 🤬🤬🤬🤬🤬🤬💢💢💢💢💢💢"
+    fi
+    unset s
+}
+if [ -n "$ZSH_VERSION" ] ; then
+    add-zsh-hook precmd prev_status
+fi
+
 # nodenv
 if [ -d ${HOME}/.nodenv ]; then
     if [ -d ${HOME}/.nodenv/bin ]; then
