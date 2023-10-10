@@ -18,5 +18,6 @@
     ],
     "vim.useSystemClipboard": true,
     "vim.hlsearch": true,
-    "vim.leader": "<space>"
+    "vim.leader": "<space>",
+    "jest.autoRun": "off"
 }
