@@ -5,12 +5,16 @@
         { "before": ["<leader>", "<leader>"], "after" : ["z", "a"] },
         { "before": ["x"], "after": ["\"", "_", "x"] },
         { "before": ["s"], "after": ["\"", "_", "s"] },
+        { "before": ["j"], "after": ["g", "j"] },
+        { "before": ["k"], "after": ["g", "k"] },
         { "before": ["t"], "after": ["g", "t"] },
         { "before": ["T"], "after": ["g", "T"] }
     ],
     "vim.visualModeKeyBindingsNonRecursive": [
         { "before": ["x"], "after": ["\"", "_", "x"] },
-        { "before": ["s"], "after": ["\"", "_", "s"] }
+        { "before": ["s"], "after": ["\"", "_", "s"] },
+        { "before": ["j"], "after": ["g", "j"] },
+        { "before": ["k"], "after": ["g", "k"] }
     ],
     "vim.insertModeKeyBindingsNonRecursive": [
         { "before": ["j", "j"], "after": ["<Esc>"] },
