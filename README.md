@@ -39,6 +39,11 @@ Install [VSCodeVim](https://marketplace.visualstudio.com/items?itemName=vscodevi
 
 Copy the content of `vscode.settings.json` to VSCode's settings.json.
 
+## Zed
+
+- Copy the content of `zed.settings.json` to Zed's settings.json.
+- Copy the content of `zed.keymap.json` to Zed's keymap.json.
+
 ## Vim
 
 Run bootstrap script.

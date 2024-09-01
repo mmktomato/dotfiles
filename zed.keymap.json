@@ -1,0 +1,27 @@
+[
+  {
+    "context": "Editor && vim_mode == insert",
+    "bindings": {
+      "j j": "vim::NormalBefore",
+      "ctrl-j": ["workspace::SendKeystrokes", "enter"]
+    }
+  },
+  {
+    "context": "menu",
+    "bindings": {
+      "ctrl-j": ["workspace::SendKeystrokes", "ctrl-n"],
+      "ctrl-k": ["workspace::SendKeystrokes", "ctrl-p"],
+      "ctrl-m": ["workspace::SendKeystrokes", "enter"]
+    }
+  },
+  {
+    "context": "Editor && (vim_mode == normal || vim_mode == visual)",
+    "bindings": {
+      "t": "pane::ActivateNextItem",
+      "shift-t": "pane::ActivatePrevItem"
+
+      // ToggleFold is not supported yet. https://github.com/zed-industries/zed/issues/6822
+      // "space space":
+    }
+  }
+]
