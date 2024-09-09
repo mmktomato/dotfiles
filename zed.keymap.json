@@ -18,10 +18,11 @@
     "context": "Editor && (vim_mode == normal || vim_mode == visual)",
     "bindings": {
       "t": "pane::ActivateNextItem",
-      "shift-t": "pane::ActivatePrevItem"
+      "shift-t": "pane::ActivatePrevItem",
 
       // ToggleFold is not supported yet. https://github.com/zed-industries/zed/issues/6822
-      // "space space":
+      "space space": "editor::Fold",
+      "space o": "editor::UnfoldLines"
     }
   }
 ]
