@@ -5,6 +5,7 @@
     "use_multiline_find": true,
     "use_system_clipboard": "never"
   },
+  "use_smartcase_search": true,
   "tab_size": 2,
   "format_on_save": "off",
   "languages": {
