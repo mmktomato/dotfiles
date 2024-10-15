@@ -19,10 +19,7 @@
     "bindings": {
       "t": "pane::ActivateNextItem",
       "shift-t": "pane::ActivatePrevItem",
-
-      // ToggleFold is not supported yet. https://github.com/zed-industries/zed/issues/6822
-      "space space": "editor::Fold",
-      "space o": "editor::UnfoldLines"
+      "space space": "editor::ToggleFold"
     }
   }
 ]
