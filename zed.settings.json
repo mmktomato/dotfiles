@@ -3,7 +3,7 @@
   "vim": {
     "use_smartcase_find": true,
     "use_multiline_find": true,
-    "use_system_clipboard": "never"
+    "use_system_clipboard": "always"
   },
   "use_smartcase_search": true,
   "tab_size": 2,
