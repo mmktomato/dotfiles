@@ -17,27 +17,11 @@
   {
     "context": "Editor && (vim_mode == normal || vim_mode == visual)",
     "bindings": {
+      "x": ["workspace::SendKeystrokes", "\" _ x"],
+      "s": ["workspace::SendKeystrokes", "\" _ s"],
       "t": "pane::ActivateNextItem",
       "shift-t": "pane::ActivatePrevItem",
-      "space space": "editor::ToggleFold"
+      "space space": "editor::ToggleFold",
     }
   },
-  {
-    "context": "Editor && vim_mode == normal",
-    "bindings": {
-      "ctrl-5": "vim::DeleteRight",
-      "x": ["workspace::SendKeystrokes", "\" _ ctrl-5"],
-      "ctrl-6": "vim::Substitute",
-      "s": ["workspace::SendKeystrokes", "\" _ ctrl-6"],
-    }
-  },
-  {
-    "context": "Editor && vim_mode == visual",
-    "bindings": {
-      "ctrl-7": "vim::VisualDelete",
-      "x": ["workspace::SendKeystrokes", "\" _ ctrl-7"],
-      "ctrl-8": "vim::Substitute",
-      "s": ["workspace::SendKeystrokes", "\" _ ctrl-8"],
-    }
-  }
 ]
