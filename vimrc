@@ -121,6 +121,8 @@ augroup colorScheme
     autocmd ColorScheme * highlight Terminal
         \ ctermbg=16
         \ guibg=black
+    autocmd ColorScheme * highlight Visual
+        \ ctermbg=85
     autocmd InsertEnter,InsertLeave * set cursorline!
 augroup END
 colorscheme zenburn
