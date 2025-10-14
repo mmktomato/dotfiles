@@ -15,6 +15,7 @@ if [ -n "$ZSH_VERSION" ] ; then
     zstyle ':completion:*' list-colors "${LS_COLORS}"
     zstyle ':completion:*' matcher-list 'm:{a-z}={A-Z}'
     setopt completealiases
+    setopt prompt_subst
 fi
 
 export LANG=ja_JP.UTF-8
@@ -58,6 +59,7 @@ if [ -f ~/git-completion/git-prompt.sh ] ; then
         PROMPT_COMMAND="__git_ps1 '\u@\h \w' ' \\\$ '"
     elif [ -n "$ZSH_VERSION" ] ; then
         function gitps1() {
+            # `prompt_subst` option needs to be set.
             __git_ps1 '%n@%m %~' ' $ '
         }
         add-zsh-hook precmd gitps1
