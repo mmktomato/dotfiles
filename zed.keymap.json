@@ -20,8 +20,8 @@
       "x": ["workspace::SendKeystrokes", "\" _ x"],
       "s": ["workspace::SendKeystrokes", "\" _ s"],
       "t": "pane::ActivateNextItem",
-      "shift-t": "pane::ActivatePrevItem",
-      "space space": "editor::ToggleFold",
+      "shift-t": "pane::ActivatePreviousItem",
+      "space space": "editor::ToggleFold"
     }
-  },
+  }
 ]
