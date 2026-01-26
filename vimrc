@@ -92,14 +92,6 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 set softtabstop=0 " same as tabstop
-
-function! MyFoldText()
-    let linecount = v:foldend - v:foldstart + 1
-    let indent = repeat(' ', v:foldlevel * shiftwidth())
-    return indent . '\__  (' . linecount . ' lines)  '
-endfunction
-set foldtext=MyFoldText()
-set foldmethod=indent
 set nocursorline
 
 augroup colorScheme
@@ -126,6 +118,67 @@ augroup colorScheme
     autocmd InsertEnter,InsertLeave * set cursorline!
 augroup END
 colorscheme zenburn
+
+" Folding
+function! MyFoldText()
+    let linecount = v:foldend - v:foldstart + 1
+    let indent = repeat(' ', v:foldlevel * shiftwidth())
+    return indent . '\__  (' . linecount . ' lines)  '
+endfunction
+set foldtext=MyFoldText()
+set foldmethod=indent
+
+" Markdown folding
+function! MarkdownFoldLevel(lnum)
+    let line = getline(a:lnum)
+
+    " Lines starting with '#': level = (number of # - 1)
+    if line =~ '^#'
+        let level = len(matchstr(line, '^#\+'))
+        return '>' . (level - 1)
+    endif
+
+    " Indented lines: base level + indent level
+    if line =~ '^\s\+\S'
+        let indent = indent(a:lnum)
+        let sw = shiftwidth()
+        let indent_level = indent / sw
+
+        " Search for the previous '#' heading
+        let lnum = a:lnum - 1
+        while lnum > 0
+            let l = getline(lnum)
+            if l =~ '^#'
+                let base_level = len(matchstr(l, '^#\+'))
+                return base_level + indent_level
+            endif
+            let lnum -= 1
+        endwhile
+
+        " If no heading found, use indent level only
+        return indent_level
+    endif
+
+    " Normal lines: use the number of '#' from the previous heading as the level
+    let lnum = a:lnum - 1
+    while lnum > 0
+        let l = getline(lnum)
+        if l =~ '^#'
+            let base_level = len(matchstr(l, '^#\+'))
+            return base_level
+        endif
+        let lnum -= 1
+    endwhile
+
+    " If no heading found, level is 0
+    return 0
+endfunction
+
+augroup markdown
+    autocmd!
+    autocmd FileType markdown setlocal foldmethod=expr
+    autocmd FileType markdown setlocal foldexpr=MarkdownFoldLevel(v:lnum)
+augroup END
 
 set number
 set ignorecase
