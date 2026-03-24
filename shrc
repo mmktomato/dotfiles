@@ -43,6 +43,22 @@ alias gd='git diff'
 alias mv='mv -i'
 alias grep='grep --color=auto'
 
+function gdd() {
+    gd $@ | delta \
+        --side-by-side \
+        --syntax-theme='DarkNeon' \
+        --file-style='bold pink' \
+        --file-decoration-style='ol' \
+        --hunk-header-style='omit' \
+        --hunk-header-decoration-style='grey box ul' \
+        --hunk-header-line-number-style=none \
+        --line-numbers-left-style=grey \
+        --line-numbers-right-style=grey \
+        --line-numbers-minus-style=lightblue \
+        --line-numbers-plus-style=lime \
+        --line-numbers-zero-style=242
+}
+
 # git-completion
 if [ -n "$BASH_VERSION" ] && [ -f ~/git-completion/git-completion.bash ] ; then
     . ~/git-completion/git-completion.bash
