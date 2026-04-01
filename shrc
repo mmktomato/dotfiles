@@ -54,9 +54,14 @@ function gdd() {
         --hunk-header-line-number-style=none \
         --line-numbers-left-style=grey \
         --line-numbers-right-style=grey \
-        --line-numbers-minus-style=lightblue \
-        --line-numbers-plus-style=lime \
-        --line-numbers-zero-style=242
+        --line-numbers-minus-style=pink \
+        --line-numbers-plus-style=lightgreen \
+        --line-numbers-zero-style=242 \
+        --plus-style 'syntax darkgreen' \
+        --plus-emph-style 'darkgreen lightgreen' \
+        --minus-style 'syntax darkred' \
+        --minus-emph-style 'darkred pink' \
+        --keep-plus-minus-markers
 }
 
 # git-completion
