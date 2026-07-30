@@ -39,30 +39,33 @@ case $OSTYPE in
 esac
 
 alias gs='git status'
+alias gsh='git show'
 alias gd='git diff'
 alias mv='mv -i'
 alias grep='grep --color=auto'
 
-function gdd() {
-    gd $@ | delta \
-        --side-by-side \
-        --syntax-theme='DarkNeon' \
-        --file-style='bold pink' \
-        --file-decoration-style='ol' \
-        --hunk-header-style='omit' \
-        --hunk-header-decoration-style='grey box ul' \
-        --hunk-header-line-number-style=none \
-        --line-numbers-left-style=grey \
-        --line-numbers-right-style=grey \
-        --line-numbers-minus-style=pink \
-        --line-numbers-plus-style=lightgreen \
-        --line-numbers-zero-style=242 \
-        --plus-style 'syntax darkgreen' \
-        --plus-emph-style 'darkgreen lightgreen' \
-        --minus-style 'syntax darkred' \
-        --minus-emph-style 'darkred pink' \
-        --keep-plus-minus-markers
-}
+DELTA_OPTS=(
+    --side-by-side
+    --syntax-theme=DarkNeon
+    --file-style='bold pink'
+    --file-decoration-style=ol
+    --hunk-header-style=omit
+    --hunk-header-decoration-style='grey box ul'
+    --hunk-header-line-number-style=none
+    --line-numbers-left-style=grey
+    --line-numbers-right-style=grey
+    --line-numbers-minus-style=pink
+    --line-numbers-plus-style=lightgreen
+    --line-numbers-zero-style=242
+    --plus-style='syntax darkgreen'
+    --plus-emph-style='darkgreen lightgreen'
+    --minus-style='syntax darkred'
+    --minus-emph-style='darkred pink'
+    --keep-plus-minus-markers
+)
+
+function gdd() { gd $@ | delta "${DELTA_OPTS[@]}" }
+function gshd() { gsh $@ | delta "${DELTA_OPTS[@]}" }
 
 # git-completion
 if [ -n "$BASH_VERSION" ] && [ -f ~/git-completion/git-completion.bash ] ; then
