@@ -20,6 +20,10 @@ model: sonnet
    Make sure it covers
    - the task's background
    - how it came about
+   - every decision the user made
+     - explicit instructions and constraints
+     - choices between options you presented
+     - concerns you raised that the user overruled or reaffirmed
    - what was investigated
    - every change made
    - every destructive/breaking change
