@@ -5,6 +5,7 @@ description: Applies a house style guide whenever writing or editing prose. Use 
 
 # Ground rules
 
+- Write well-structured, organized and coherent text.
 - Write clear, concise sentences.
 - Use clear, simple words.
 - Break lines appropriately; keep lines from getting overloaded.
