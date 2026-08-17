@@ -1,7 +1,6 @@
 ---
 name: requesting-review
 description: "Writes a review request file for a completed task and a delegation prompt for another AI agent to review it. Use when asked to request a review, get a second opinion, or hand off work for independent review."
-model: sonnet
 ---
 
 # Requesting Review

@@ -1,7 +1,6 @@
 ---
 name: writing-text
 description: Applies a house style guide whenever writing or editing prose. Use for any task that produces English or Japanese text output.
-model: sonnet
 ---
 
 # Ground rules

@@ -2,7 +2,6 @@
 name: committing-git-changes
 description: Guides AI agents on how to split commits appropriately, write concise commit messages. Use this skill whenever making git commits.
 allowed-tools: Bash(git rev-parse:*) Read(/.git) shell(git rev-parse:*) read(.git)
-model: haiku
 ---
 
 # Git Commit Guidelines
