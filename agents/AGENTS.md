@@ -53,6 +53,17 @@ gh api repos/organization/repository
 gh api -X GET repos/organization/repository
 ```
 
+# Source Code Comments
+
+As a rule, don't write comments.
+When a comment is necessary, follow these rules.
+
+- Write it in English.
+- Keep it concise. A single short line is preferred.
+    - If the background is complex, referring to the relevant Backlog issue key is acceptable.
+- It must still be meaningful after the PR is merged (= after the task ends).
+    - In other words, don't write comments specific to the task currently in progress.
+
 # Git Commits
 
 Git commits are only permitted when the user explicitly instructs you to commit.
