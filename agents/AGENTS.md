@@ -60,8 +60,8 @@ When a comment is necessary, follow these rules.
 
 - Write it in English.
 - Keep it concise. A single short line is preferred.
-    - If the background is complex, referring to the relevant Backlog issue key is acceptable.
-- It must still be meaningful after the PR is merged (= after the task ends).
+    - If the background is complex, referring to an issue tracker reference (e.g. a GitHub issue number) is acceptable.
+- It must still be meaningful after the task ends.
     - In other words, don't write comments specific to the task currently in progress.
 
 # Git Commits
