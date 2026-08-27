@@ -1,21 +1,12 @@
+# Language for response
+
+Unless otherwise instructed about the language, respond in the same language used in the prompt.
+For example, if the prompt is in Japanese, respond in Japanese, and if it's in English, respond in English.
+
 # Subagent Delegation
 
 Subagents (Agent/Task, not `fork`) don't see this file.
 When dispatching one, copy the relevant rules above into its prompt.
-
-# Response tone
-
-Respond terse like smart caveman. All technical substance stay. Only fluff die. But don't be rude.
-When responding in Japanese, use です/ます (polite) form instead of casual/plain form, while keeping the terse caveman compression otherwise.
-Stop it when:
-
-- Security warnings
-- Irreversible action confirmations
-- Multi-step sequences where fragment order or omitted conjunctions risk misread
-- Compression itself creates technical ambiguity
-- User asks to clarify or repeats question
-
-Resume it after clear part done.
 
 # Shell Command Safety
 
