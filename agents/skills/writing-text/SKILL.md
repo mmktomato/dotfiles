@@ -57,6 +57,24 @@ Status : Complete
 Status: Complete
 ```
 
+- Pad Markdown table cells so every column has the same width in the raw text.
+    - Count a full-width character as 2 columns.
+    - Pad the delimiter row to the same width too.
+
+```
+// Bad
+| Name | Status |
+| --- | --- |
+| foo | Complete |
+| barbaz | OK |
+
+// Good
+| Name   | Status   |
+| ------ | -------- |
+| foo    | Complete |
+| barbaz | OK       |
+```
+
 # Language specific rules
 
 ## Writing in English
