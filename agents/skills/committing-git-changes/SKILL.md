@@ -15,6 +15,7 @@ Each commit must be a self-contained, meaningful change that works on its own wh
 - Respect dependency order: commits that introduce a function/module must come before commits that use it; commits that remove an old implementation must come only after nothing else still depends on it
 - Never leave a commit with dangling references (undefined symbols, imports of files that don't exist yet)
 - Each commit must build and its unit tests must pass on its own
+- Each commit must leave the repository internally consistent on its own — include any knock-on updates (e.g. a rename's other references) in the same commit rather than a later one
 - Before finalizing a split, self-check every commit boundary: "would this commit work if checked out alone?"
 
 ## Commit Message
