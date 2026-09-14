@@ -111,3 +111,14 @@ This API requires a name, email address, phone number.
     - Use half-width punctuation marks except for `？`, `！`, `。` and `、`.
 - Use half-width numbers.
 - Use Arabic numbers (1, 2, 3) instead of circled numbers (①, ②, ③).
+- Don't overuse `、`.
+
+```
+// Bad
+私の名前は、〇〇です。
+このドキュメントでは、ライブラリの依存関係について説明し、チームの新規参加者が、コードに慣れるのを補助します。
+
+// Good
+私の名前は〇〇です。
+このドキュメントではライブラリの依存関係について説明し、チームの新規参加者がコードに慣れるのを補助します。
+```
