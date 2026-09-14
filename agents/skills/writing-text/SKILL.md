@@ -57,6 +57,28 @@ Status : Complete
 Status: Complete
 ```
 
+- Don't use a slash (`/`) as an AND separator. Use `、` in Japanese and `,` in English.
+
+```
+// Bad
+The data is stored in the account / user / customer tables.
+データは account / user / customer テーブルに保存されている
+
+// Good
+The data is stored in the account, user, customer tables.
+データは account, user, customer テーブルに保存されている
+```
+
+```
+// Bad
+This API requires a name / email address / phone number.
+この API は 名前 / メールアドレス / 電話番号 を要求する
+
+// Good
+This API requires a name, email address, phone number.
+この API は名前、メールアドレス、電話番号を要求する
+```
+
 - Pad Markdown table cells so every column has the same width in the raw text.
     - Count a full-width character as 2 columns.
     - Pad the delimiter row to the same width too.
