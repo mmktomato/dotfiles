@@ -6,5 +6,5 @@
 !/old/emacs.d/md_template.css
 /old/emacs.d/lisp/myfont.el
 
-# Claude Code synced skills
-/agents/skills/synced/
+# Claude Code
+.claude/
