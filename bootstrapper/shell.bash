@@ -23,14 +23,23 @@ function bootstrap_bash() {
 
     mkdir -p ~/.agents
     ln -s $DOTFILES/agents/AGENTS.md ~/.agents/AGENTS.md
-    ln -s $DOTFILES/agents/skills ~/.agents/skills
 
     mkdir -p ~/.copilot
     ln -s $DOTFILES/agents/AGENTS.md ~/.copilot/copilot-instructions.md
 
     mkdir -p ~/.claude
     ln -s $DOTFILES/agents/AGENTS.md ~/.claude/CLAUDE.md
-    ln -s $DOTFILES/agents/skills ~/.claude/skills
+
+    local SKILLS=(building-plans committing-git-changes requesting-review writing-text)
+
+    mkdir -p ~/.agents/skills
+    mkdir -p ~/.claude/skills
+
+    local SKILL
+    for SKILL in "${SKILLS[@]}"; do
+        ln -s $DOTFILES/agents/skills/$SKILL ~/.agents/skills/$SKILL
+        ln -s $DOTFILES/agents/skills/$SKILL ~/.claude/skills/$SKILL
+    done
 }
 
 bootstrap_bash $1
