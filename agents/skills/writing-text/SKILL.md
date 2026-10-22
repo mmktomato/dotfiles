@@ -107,6 +107,19 @@ This API requires a name, email address, phone number.
 
 - Use the polite ですます form.
 - Use half-width spaces.
+- Put a half-width space between half-width and full-width characters.
+    - Numbers are an exception; don't put a space around them.
+
+```
+// Bad
+このissueを更新する
+1 月
+
+// Good
+この issue を更新する
+1月
+```
+
 - Use half-width symbols
     - Use half-width punctuation marks except for `？`, `！`, `。` and `、`.
 - Use half-width numbers.
