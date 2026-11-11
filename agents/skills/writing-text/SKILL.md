@@ -105,7 +105,10 @@ This API requires a name, email address, phone number.
 
 ## Writing in Japanese
 
-- Use the polite ですます form.
+- Use the polite ですます form when addressing someone.
+    - e.g. Slack messages, issue tracker comments
+- Use the plain だ、である form for general writing.
+    - e.g. issue tracker descriptions, PR descriptions
 - Use half-width spaces.
 - Put a half-width space between half-width and full-width characters.
     - Numbers are an exception; don't put a space around them.
